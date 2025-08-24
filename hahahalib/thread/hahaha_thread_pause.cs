@@ -60,7 +60,7 @@ namespace hahahalib
         {
             if (!Is_Close_)
             {
-                Wait();
+                
                 if (Event_Exit_ != null)
                 {
                     Event_Exit_.Set();
@@ -143,8 +143,8 @@ namespace hahahalib
                 {
                     Handle();
                 
-                    Event_Run_.Reset();   // 對應 ResetEvent
-                    Event_Wait_.Set();    // 通知 Wait() 完成
+                    Event_Run_?.Reset();   // 對應 ResetEvent
+                    Event_Wait_?.Set();    // 通知 Wait() 完成
                 }
                 else if (idx == 1) // Exit
                 {
