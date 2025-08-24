@@ -11,15 +11,15 @@ namespace hahahalib
     /// - Close() 關閉執行緒與資源
     /// - Terminate() 強制終止（危險，盡量避免）
     /// </summary>
-    public class Hahaha_Thread_Pause
+    public class hahaha_thread_pause
     {
-        private Thread? Thread_;
-        private ManualResetEvent? Event_Run_;   // 對應 Event_Run_
-        private AutoResetEvent? Event_Wait_;    // 對應 Event_Wait_
-        private ManualResetEvent? Event_Exit_;  // 對應 Event_Exit_
-        private volatile bool Is_Close_;
+        public Thread? Thread_;
+        public ManualResetEvent? Event_Run_;   // 對應 Event_Run_
+        public AutoResetEvent? Event_Wait_;    // 對應 Event_Wait_
+        public ManualResetEvent? Event_Exit_;  // 對應 Event_Exit_
+        public bool Is_Close_ = true;
 
-        public Hahaha_Thread_Pause()
+        public hahaha_thread_pause()
         {
             Reset();
         }
@@ -30,7 +30,7 @@ namespace hahahalib
             Event_Run_ = null;
             Event_Wait_ = null;
             Event_Exit_ = null;
-            Is_Close_ = false;
+            Is_Close_ = true;
         }
 
         /// <summary>
@@ -58,25 +58,30 @@ namespace hahahalib
         /// </summary>
         public virtual void Close()
         {
-            if (Event_Exit_ != null)
+            if (!Is_Close_)
             {
-                Event_Exit_.Set();
-                Event_Exit_.Dispose();
-                Event_Exit_ = null;
+                Wait();
+                if (Event_Exit_ != null)
+                {
+                    Event_Exit_.Set();
+                    Event_Exit_.Dispose();
+                    Event_Exit_ = null;
+                }
+                Event_Run_?.Dispose();
+                Event_Run_ = null;
+
+                Event_Wait_?.Dispose();
+                Event_Wait_ = null;
+
+                if (Thread_ != null)
+                {
+                    Thread_.Join(100); // 等待結束
+                    Thread_ = null;
+                }
+
+                Is_Close_ = true;
             }
-            Event_Run_?.Dispose();
-            Event_Run_ = null;
-
-            Event_Wait_?.Dispose();
-            Event_Wait_ = null;
-
-            if (Thread_ != null)
-            {
-                Thread_.Join(100); // 等待結束
-                Thread_ = null;
-            }
-
-            Is_Close_ = true;
+            
         }
 
         /// <summary>
@@ -127,7 +132,7 @@ namespace hahahalib
         /// <summary>
         /// 執行緒函式
         /// </summary>
-        private void Thread_Proc()
+        public void Thread_Proc()
         {
             WaitHandle[] handles = { Event_Run_, Event_Exit_ };
 
@@ -137,6 +142,7 @@ namespace hahahalib
                 if (idx == 0) // Run
                 {
                     Handle();
+                
                     Event_Run_.Reset();   // 對應 ResetEvent
                     Event_Wait_.Set();    // 通知 Wait() 完成
                 }
@@ -150,7 +156,7 @@ namespace hahahalib
         /// <summary>
         /// 子類別覆寫，實際處理工作
         /// </summary>
-        protected virtual void Handle()
+        public virtual void Handle()
         {
             // 預設不做事
         }

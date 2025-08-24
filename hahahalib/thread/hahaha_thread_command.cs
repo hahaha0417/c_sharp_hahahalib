@@ -15,19 +15,19 @@ namespace hahahalib
     /// </summary>
     public class hahaha_thread_command
     {
-        
-        
+
+
 
         // === 狀態/同步物件 ===
-        private Thread? Thread_;
-        private ManualResetEvent? Event_Run_;   // 對應 Event_Run_ (manual reset)
-        private AutoResetEvent? Event_Wait_;   // 對應 Event_Wait_ (auto reset)
-        private ManualResetEvent? Event_Exit_;  // 對應 Event_Exit_ (manual reset)
+        public Thread? Thread_;
+        public ManualResetEvent? Event_Run_;   // 對應 Event_Run_ (manual reset)
+        public AutoResetEvent? Event_Wait_;   // 對應 Event_Wait_ (auto reset)
+        public ManualResetEvent? Event_Exit_;  // 對應 Event_Exit_ (manual reset)
 
-        private readonly Queue<hahaha_thread_command_command> Queue_ = new Queue<hahaha_thread_command_command>();
-        private readonly Lock Lock_ = new Lock();
+        public Queue<hahaha_thread_command_command> Queue_ = new Queue<hahaha_thread_command_command>();
+        public Lock Lock_ = new Lock();
 
-        private volatile bool Is_Close_;
+        public bool Is_Close_ = true;
 
         // === 建構/重設 ===
         public hahaha_thread_command()
@@ -41,7 +41,7 @@ namespace hahahalib
             Event_Run_ = null;
             Event_Wait_ = null;
             Event_Exit_ = null;
-            Is_Close_ = false;
+            Is_Close_ = true;
 
             lock (Lock_)
             {
@@ -117,7 +117,7 @@ namespace hahahalib
         }
 
         // === 丟入命令 ===
-        public virtual int Add_Command(int code = 0, object parameter = null)
+        public virtual int Add_Command(string code, object parameter = null)
         {
             if (Event_Run_ == null) return -1;
 
@@ -139,7 +139,7 @@ namespace hahahalib
         }
 
         // === 執行緒主迴圈 ===
-        private void Thread_Proc()
+        public void Thread_Proc()
         {
             var handles = new WaitHandle[] { Event_Run_, Event_Exit_ };
 
@@ -182,7 +182,7 @@ namespace hahahalib
         /// <summary>
         /// 處理單一命令：請在子類別覆寫
         /// </summary>
-        protected virtual int Handle(hahaha_thread_command_command cmd)
+        public virtual int Handle(hahaha_thread_command_command cmd)
         {
             // 預設不做事，回 0
             return 0;
@@ -191,7 +191,7 @@ namespace hahahalib
         /// <summary>
         /// 可覆寫：處理 Handle() 內部拋出的例外
         /// </summary>
-        protected virtual void OnHandleException(hahaha_thread_command_command cmd, Exception ex)
+        public virtual void OnHandleException(hahaha_thread_command_command cmd, Exception ex)
         {
             // 預設吞例外；可改寫成記錄或回報
         }
