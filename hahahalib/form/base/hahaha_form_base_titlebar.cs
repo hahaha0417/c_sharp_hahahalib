@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -24,6 +25,20 @@ namespace hahahalib.ui
         [DllImport("user32.dll")] static extern bool ReleaseCapture();
         [DllImport("user32.dll")] static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
         [DllImport("user32.dll")] static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+        // 讓框架知道我們換了邊框策略，但不觸發系統回畫標題列
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
+            int X, int Y, int cx, int cy, uint uFlags);
+        const uint SWP_NOSIZE = 0x0001, SWP_NOMOVE = 0x0002, SWP_NOZORDER = 0x0004, SWP_FRAMECHANGED = 0x0020;
+        
+
+        [DllImport("dwmapi.dll")]
+        static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
+
+        // ===== DWM 關閉非用戶區繪製 + 關邊框顏色（Win11）=====
+        const int DWMWA_NCRENDERING_POLICY = 2;
+        const int DWMWA_BORDER_COLOR = 34;      // Win11 專用
+        const int DWMNCRP_DISABLED = 1;         // 0=UseWindowStyle, 1=Disabled, 2=Enabled
 
 
         const int GWL_STYLE = -16;
@@ -34,6 +49,18 @@ namespace hahahalib.ui
         const int WM_NCLBUTTONDOWN = 0xA1;
         const int WM_NCHITTEST = 0x84;
         const int WM_SYSCOMMAND = 0x112;
+
+        // ===== 需要攔的訊息常數 =====
+        const int WM_NCCALCSIZE = 0x0083;
+        const int WM_NCPAINT = 0x0085;
+        const int WM_NCACTIVATE = 0x0086;
+        const int WM_SETTEXT = 0x000C;
+        const int WM_SETICON = 0x0080;
+        const int WM_THEMECHANGED = 0x031A;
+
+        // UXTheme 內部會下發的未文件化訊息（標題列/框線重畫）：
+        const int WM_NCUAHDRAWCAPTION = 0x00AE;
+        const int WM_NCUAHDRAWFRAME = 0x00AF;
 
         const int HTCAPTION = 0x2;
         const int HTLEFT = 10;
@@ -49,7 +76,7 @@ namespace hahahalib.ui
 
         public Color Color_Form_ = Color.FromArgb(255, 30, 30, 30);
         public Color Color_Body_ = Color.FromArgb(255, 190, 190, 190);
-        public Color Color_System_ = Color.FromArgb(255, 110, 110, 110);
+        public Color Color_System_ = Color.FromArgb(255, 90, 120, 90);
 
         public Color Color_Title_Base_ = Color.FromArgb(255, 190, 255, 190);
         public Color Color_Title_Move_ = Color.FromArgb(255, 210, 255, 210);
@@ -73,7 +100,7 @@ namespace hahahalib.ui
             InitializeComponent();
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Sizable;
             StartPosition = FormStartPosition.CenterScreen;
             MinimumSize = new Size(480, 320);
 
@@ -98,41 +125,92 @@ namespace hahahalib.ui
 
             DoubleBuffered = true;
 
-            Load += (s, e) => MaximizedBounds = Screen.FromHandle(Handle).WorkingArea; 
-            SizeChanged += (s, e) =>
-            {
-                button_max.Text = WindowState == FormWindowState.Maximized ? "🗗" : "☐";
-                MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
-            };
 
      
              
             
         }
 
+        void SuppressNonClientRepaint()
+        {
+            SetWindowPos(Handle, IntPtr.Zero, 0, 0, 0, 0,
+                SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+        }
+
+        void ApplyNoNonClientDrawing()
+        {
+            try
+            {
+                int ncrDisabled = DWMNCRP_DISABLED;
+                DwmSetWindowAttribute(Handle, DWMWA_NCRENDERING_POLICY, ref ncrDisabled, sizeof(int));
+
+                // Win11 上把邊框色設 0，避免白框
+                int zero = 0;
+                DwmSetWindowAttribute(Handle, DWMWA_BORDER_COLOR, ref zero, sizeof(int));
+            }
+            catch { /* 老系統沒有就忽略 */ }
+        }
+
         // 邊緣拉伸
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WM_NCHITTEST)
+            switch (m.Msg)
             {
-                base.WndProc(ref m);
+                // 告訴系統：非用戶區我自己處理，取消預設邊框/標題列尺寸
+                case WM_NCCALCSIZE:
+                    if (m.WParam != IntPtr.Zero) { m.Result = IntPtr.Zero; return; }
+                    break;
 
-                Point p = PointToClient(new Point((int)m.LParam & 0xFFFF, (int)m.LParam >> 16));
-                bool top = p.Y < Form_Border_Width_;
-                bool left = p.X < Form_Border_Width_;
-                bool right = p.X > Width - Form_Border_Width_;
-                bool bottom = p.Y > Height - Form_Border_Width_;
+                // 阻止系統在非用戶區重繪（避免白邊）
+                case WM_NCPAINT:
+                    m.Result = IntPtr.Zero;
+                    return;
 
-                if (top && left) { m.Result = (IntPtr)HTTOPLEFT; return; }
-                if (top && right) { m.Result = (IntPtr)HTTOPRIGHT; return; }
-                if (bottom && left) { m.Result = (IntPtr)HTBOTTOMLEFT; return; }
-                if (bottom && right) { m.Result = (IntPtr)HTBOTTOMRIGHT; return; }
-                if (top) { m.Result = (IntPtr)HTTOP; return; }
-                if (left) { m.Result = (IntPtr)HTLEFT; return; }
-                if (right) { m.Result = (IntPtr)HTRIGHT; return; }
-                if (bottom) { m.Result = (IntPtr)HTBOTTOM; return; }
-                return;
+                // 焦點切換時，阻止系統非用戶區重畫
+                case WM_NCACTIVATE:
+                    // 直接回 1（視為已處理且保持外觀不變）
+                    m.Result = (IntPtr)1;
+                    return;
+
+                // 改標題文字、改 Icon 都會觸發非用戶區重繪，一併吃掉重畫
+                case WM_SETTEXT:
+                case WM_SETICON:
+                    base.WndProc(ref m);   // 讓文字/圖示真的被更新
+                                           // 然後阻止隨後的系統非用戶區重畫
+                    SuppressNonClientRepaint();
+                    return;
+
+                // 主題切換時，避免系統回畫標題列；同時重套一次 DWM 設定
+                case WM_THEMECHANGED:
+                    ApplyNoNonClientDrawing();
+                    m.Result = IntPtr.Zero;
+                    return;
+
+                // 這兩個是 UXTheme 用來畫標題列/框線的「內部訊息」，直接吃掉
+                case WM_NCUAHDRAWCAPTION:
+                case WM_NCUAHDRAWFRAME:
+                    m.Result = IntPtr.Zero;
+                    return;
+                case WM_NCHITTEST:
+                    base.WndProc(ref m);
+
+                    Point p = PointToClient(new Point((int)m.LParam & 0xFFFF, (int)m.LParam >> 16));
+                    bool top = p.Y < Form_Border_Width_;
+                    bool left = p.X < Form_Border_Width_;
+                    bool right = p.X > Width - Form_Border_Width_;
+                    bool bottom = p.Y > Height - Form_Border_Width_;
+
+                    if (top && left) { m.Result = (IntPtr)HTTOPLEFT; return; }
+                    if (top && right) { m.Result = (IntPtr)HTTOPRIGHT; return; }
+                    if (bottom && left) { m.Result = (IntPtr)HTBOTTOMLEFT; return; }
+                    if (bottom && right) { m.Result = (IntPtr)HTBOTTOMRIGHT; return; }
+                    if (top) { m.Result = (IntPtr)HTTOP; return; }
+                    if (left) { m.Result = (IntPtr)HTLEFT; return; }
+                    if (right) { m.Result = (IntPtr)HTRIGHT; return; }
+                    if (bottom) { m.Result = (IntPtr)HTBOTTOM; return; }
+                    return;
             }
+     
             base.WndProc(ref m);
         }
 
@@ -141,12 +219,14 @@ namespace hahahalib.ui
             base.OnHandleCreated(e);
             int style = GetWindowLong(this.Handle, GWL_STYLE);
             style &= ~WS_CAPTION;
-            style &= ~WS_THICKFRAME;                 // 去掉系統可縮放邊框
+            //style &= ~WS_THICKFRAME;                 // 去掉系統可縮放邊框
             SetWindowLong(this.Handle, GWL_STYLE, style);
             
             
             
         }
+
+   
 
         public void panel_title_MouseDown(object sender, MouseEventArgs e)
         {
