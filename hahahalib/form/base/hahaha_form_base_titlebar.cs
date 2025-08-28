@@ -99,7 +99,7 @@ namespace hahahalib.ui
         {
             InitializeComponent();
 
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
+           
             FormBorderStyle = FormBorderStyle.Sizable;
             StartPosition = FormStartPosition.CenterScreen;
             MinimumSize = new Size(480, 320);
@@ -172,25 +172,25 @@ namespace hahahalib.ui
                     m.Result = (IntPtr)1;
                     return;
 
-                // 改標題文字、改 Icon 都會觸發非用戶區重繪，一併吃掉重畫
-                case WM_SETTEXT:
-                case WM_SETICON:
-                    base.WndProc(ref m);   // 讓文字/圖示真的被更新
-                                           // 然後阻止隨後的系統非用戶區重畫
-                    SuppressNonClientRepaint();
-                    return;
+                //// 改標題文字、改 Icon 都會觸發非用戶區重繪，一併吃掉重畫
+                //case WM_SETTEXT:
+                //case WM_SETICON:
+                //    base.WndProc(ref m);   // 讓文字/圖示真的被更新
+                //                           // 然後阻止隨後的系統非用戶區重畫
+                //    SuppressNonClientRepaint();
+                //    return;
 
-                // 主題切換時，避免系統回畫標題列；同時重套一次 DWM 設定
-                case WM_THEMECHANGED:
-                    ApplyNoNonClientDrawing();
-                    m.Result = IntPtr.Zero;
-                    return;
+                //// 主題切換時，避免系統回畫標題列；同時重套一次 DWM 設定
+                //case WM_THEMECHANGED:
+                //    ApplyNoNonClientDrawing();
+                //    m.Result = IntPtr.Zero;
+                //    return;
 
-                // 這兩個是 UXTheme 用來畫標題列/框線的「內部訊息」，直接吃掉
-                case WM_NCUAHDRAWCAPTION:
-                case WM_NCUAHDRAWFRAME:
-                    m.Result = IntPtr.Zero;
-                    return;
+                //// 這兩個是 UXTheme 用來畫標題列/框線的「內部訊息」，直接吃掉
+                //case WM_NCUAHDRAWCAPTION:
+                //case WM_NCUAHDRAWFRAME:
+                //    m.Result = IntPtr.Zero;
+                //    return;
                 case WM_NCHITTEST:
                     base.WndProc(ref m);
 

@@ -48,9 +48,9 @@
             // panel_title
             // 
             panel_title.BackColor = SystemColors.ControlDarkDark;
+            panel_title.Controls.Add(panel_title_system);
             panel_title.Controls.Add(label_title);
             panel_title.Controls.Add(panel_logo);
-            panel_title.Controls.Add(panel_title_system);
             panel_title.Dock = DockStyle.Top;
             panel_title.Location = new Point(0, 0);
             panel_title.Name = "panel_title";
