@@ -14,5 +14,11 @@
     <Compile Update="form\hahaha_form_version.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ui\skiasharp\SK_Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ui\tab_controll\Tab_Controll_Base.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
