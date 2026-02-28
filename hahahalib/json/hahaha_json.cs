@@ -23,14 +23,11 @@ namespace hahahalib
                 return -1;
             }
 
-            var builder_ = new ConfigurationBuilder()
-                .AddJsonFile(file_name, optional: false, reloadOnChange: true);
+            string json = File.ReadAllText(file_name);
+            var result = JsonSerializer.Deserialize<T>(json);
 
-            IConfiguration config_ = builder_.Build();
-
-            // 綁定到類別
-            config_.GetSection(section).Bind(obj);
-
+            if (result != null)
+                obj = result;
 
             return 0;
         }
