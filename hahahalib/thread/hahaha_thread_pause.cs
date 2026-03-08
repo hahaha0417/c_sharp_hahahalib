@@ -50,8 +50,11 @@ namespace hahahalib
             {
                 IsBackground = true
             };
-            Thread_.Start();
+
+            Thread_!.Start();
         }
+
+
 
         /// <summary>
         /// 關閉執行緒與事件
