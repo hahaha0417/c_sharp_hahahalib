@@ -4,12 +4,8 @@ using System.Threading;
 namespace hahahalib
 {
     /// <summary>
-    /// 可被繼承的執行緒暫停控制類
-    /// - Create() 建立執行緒與事件
-    /// - Enabled() 觸發執行緒執行 Handle()
-    /// - Wait() 等待 Handle() 完成
-    /// - Close() 關閉執行緒與資源
-    /// - Terminate() 強制終止（危險，盡量避免）
+    /// 可重複使用的單工作執行緒包裝類別。
+    /// 每次呼叫 <see cref="Enabled"/> 都會喚醒執行緒一次，並執行 <see cref="Handle"/>。
     /// </summary>
     public class hahaha_thread_pause
     {
@@ -24,6 +20,9 @@ namespace hahahalib
             Reset();
         }
 
+        /// <summary>
+        /// 重設執行緒參考與事件狀態，並標記為已關閉。
+        /// </summary>
         public virtual void Reset()
         {
             Thread_ = null;
@@ -34,14 +33,14 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 建立執行緒與事件
+        /// 建立背景執行緒與等待事件。
         /// </summary>
         public virtual void Create()
         {
             Close();
 
-            Event_Run_ = new ManualResetEvent(false);   // ManualResetEvent (相當於 CreateEventW TRUE)
-            Event_Wait_ = new AutoResetEvent(false);    // AutoResetEvent (相當於 CreateEventW FALSE)
+            Event_Run_ = new ManualResetEvent(false);
+            Event_Wait_ = new AutoResetEvent(false);
             Event_Exit_ = new ManualResetEvent(false);
 
             Is_Close_ = false;
@@ -57,7 +56,7 @@ namespace hahahalib
 
 
         /// <summary>
-        /// 關閉執行緒與事件
+        /// 通知執行緒結束並釋放相關等待事件。
         /// </summary>
         public virtual void Close()
         {
@@ -78,7 +77,7 @@ namespace hahahalib
 
                 if (Thread_ != null)
                 {
-                    Thread_.Join(100); // 等待結束
+                    Thread_.Join(100);
                     Thread_ = null;
                 }
 
@@ -88,7 +87,7 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 啟動一次 Handle()
+        /// 觸發一次 <see cref="Handle"/> 執行。
         /// </summary>
         public virtual void Enabled()
         {
@@ -96,7 +95,7 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// Disabled
+        /// 保留給子類別自行實作停用行為的擴充點。
         /// </summary>
         public virtual void Disabled()
         {
@@ -104,7 +103,7 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 等待 Handle() 結束
+        /// 等待目前工作完成，或等待執行緒結束。
         /// </summary>
         public virtual int Wait()
         {
@@ -116,13 +115,13 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// (危險) 強制中止執行緒
+        /// 安全地終止背景工作執行緒。
         /// </summary>
         public virtual void Terminate()
         {
             if (Event_Exit_ != null)
             {
-                Event_Exit_.Set(); // 通知 ThreadProc 跳出迴圈
+                Event_Exit_.Set();
             }
 
             if (Thread_ != null)
@@ -133,7 +132,7 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 執行緒函式
+        /// 執行緒主程序。
         /// </summary>
         public void Thread_Proc()
         {
@@ -142,14 +141,14 @@ namespace hahahalib
             while (!Is_Close_)
             {
                 int idx = WaitHandle.WaitAny(handles);
-                if (idx == 0) // Run
+                if (idx == 0)
                 {
                     Handle();
                 
-                    Event_Run_?.Reset();   // 對應 ResetEvent
-                    Event_Wait_?.Set();    // 通知 Wait() 完成
+                    Event_Run_?.Reset();
+                    Event_Wait_?.Set();
                 }
-                else if (idx == 1) // Exit
+                else if (idx == 1)
                 {
                     break;
                 }
@@ -157,11 +156,10 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 子類別覆寫，實際處理工作
+        /// 由子類別覆寫，實作實際工作內容。
         /// </summary>
         public virtual void Handle()
         {
-            // 預設不做事
         }
     }
 }

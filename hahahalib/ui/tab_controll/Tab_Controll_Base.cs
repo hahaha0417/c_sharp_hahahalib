@@ -6,15 +6,18 @@ namespace hahahalib
 {
     namespace ui
     {
+        /// <summary>
+        /// 可隱藏原生頁籤標頭，但保留分頁切換能力的 TabControl。
+        /// </summary>
         public class Tab_Controll_Base : TabControl
         {
             private bool _hideTabHeader = false;
 
             /// <summary>
-            /// 設定是否隱藏 Tab 頁籤
+            /// 設為 <c>true</c> 時隱藏原生 tab 頁籤列。
             /// </summary>
             [Category("Appearance")]
-            [Description("設定是否隱藏 TabControl 的頁籤")]
+            [Description("隱藏 TabControl 的頁籤列，但保留頁面內容顯示。")]
             [DefaultValue(false)]
             public bool HideTabHeader
             {
@@ -34,7 +37,8 @@ namespace hahahalib
                 const int TCM_ADJUSTRECT = 0x1328;
                 if (m.Msg == TCM_ADJUSTRECT && !DesignMode && _hideTabHeader)
                 {
-                    m.Result = (IntPtr)1; // 隱藏 tab header
+                    // 回傳非 0，避免控制項為頁籤標頭保留空間。
+                    m.Result = (IntPtr)1;
                     return;
                 }
                 base.WndProc(ref m);

@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hahahalib: hahahalib.hahaha_bitmap_reference  類別 參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hahahalib<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">hahahalib C# 類別庫手冊</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classhahahalib_1_1hahaha__bitmap__reference.html','','classhahahalib_1_1hahaha__bitmap__reference-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hahahalib.hahaha_bitmap_reference 類別 參考文件</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>以手動參考計數共享 EmguCV 的 Mat 與對應的 Bitmap 視圖。 Bitmap 直接指向 Mat 的記憶體，因此兩者生命週期必須一致。  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開方法(Public Methods)</h2></td></tr>
+<tr class="memitem:a6a1d4cba28889ef9dd236191294c33bd" id="r_a6a1d4cba28889ef9dd236191294c33bd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6a1d4cba28889ef9dd236191294c33bd">hahaha_bitmap_reference</a> (Mat mat)</td></tr>
+<tr class="memitem:ab0fd20ec82868c2fc88ef63e9f60cfbf" id="r_ab0fd20ec82868c2fc88ef63e9f60cfbf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab0fd20ec82868c2fc88ef63e9f60cfbf">Add_Ref</a> ()</td></tr>
+<tr class="memdesc:ab0fd20ec82868c2fc88ef63e9f60cfbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">當有其他持有者要共用影像時，增加手動參考計數。  <br /></td></tr>
+<tr class="memitem:af73955deef63a2913c5cab05ef235642" id="r_af73955deef63a2913c5cab05ef235642"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af73955deef63a2913c5cab05ef235642">Dispose</a> ()</td></tr>
+<tr class="memdesc:af73955deef63a2913c5cab05ef235642"><td class="mdescLeft">&#160;</td><td class="mdescRight">釋放一個參考，當計數歸零時一併釋放 Mat 與 Bitmap。  <br /></td></tr>
+<tr class="memitem:a98765985b3af8919a7b4149cf64fbc23" id="r_a98765985b3af8919a7b4149cf64fbc23"><td class="memItemLeft">Bitmap&#160;</td><td class="memItemRight"><a class="el" href="#a98765985b3af8919a7b4149cf64fbc23">Get_Bitmap</a> ()</td></tr>
+<tr class="memdesc:a98765985b3af8919a7b4149cf64fbc23"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得由 Mat 記憶體緩衝區支撐的 Bitmap 視圖。  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開屬性</h2></td></tr>
+<tr class="memitem:aba05077396eb580de357c3e049ec301f" id="r_aba05077396eb580de357c3e049ec301f"><td class="memItemLeft">Bitmap?&#160;</td><td class="memItemRight"><a class="el" href="#aba05077396eb580de357c3e049ec301f">Bitmap_</a></td></tr>
+<tr class="memitem:aa48aaf8cf45eb9f26eb3484c42235e23" id="r_aa48aaf8cf45eb9f26eb3484c42235e23"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa48aaf8cf45eb9f26eb3484c42235e23">Count_Reference_</a> = 1</td></tr>
+<tr class="memitem:af529132ed9ce5834ccfcc20a7724eae1" id="r_af529132ed9ce5834ccfcc20a7724eae1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af529132ed9ce5834ccfcc20a7724eae1">Disposed_</a></td></tr>
+<tr class="memitem:ad286c84630af170baaa84df8a24e7725" id="r_ad286c84630af170baaa84df8a24e7725"><td class="memItemLeft">readonly object&#160;</td><td class="memItemRight"><a class="el" href="#ad286c84630af170baaa84df8a24e7725">lock_</a> = new object()</td></tr>
+<tr class="memitem:a4d28a913819e1d077d2d6a5d19d23745" id="r_a4d28a913819e1d077d2d6a5d19d23745"><td class="memItemLeft">Mat?&#160;</td><td class="memItemRight"><a class="el" href="#a4d28a913819e1d077d2d6a5d19d23745">Mat_</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">詳細描述</h2>
+<div class="textblock">
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00013">13</a> 行.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">建構子與解構子說明文件</h2>
+<a id="a6a1d4cba28889ef9dd236191294c33bd" name="a6a1d4cba28889ef9dd236191294c33bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1d4cba28889ef9dd236191294c33bd">&#9670;&#160;</a></span>hahaha_bitmap_reference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hahahalib.hahaha_bitmap_reference.hahaha_bitmap_reference </td>
+          <td>(</td>
+          <td class="paramtype">Mat</td>          <td class="paramname"><span class="paramname"><em>mat</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00021">21</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00016">Bitmap_</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00015">Mat_</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函式成員說明文件</h2>
+<a id="ab0fd20ec82868c2fc88ef63e9f60cfbf" name="ab0fd20ec82868c2fc88ef63e9f60cfbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0fd20ec82868c2fc88ef63e9f60cfbf">&#9670;&#160;</a></span>Add_Ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.hahaha_bitmap_reference.Add_Ref </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00051">51</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00017">Count_Reference_</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00019">lock_</a>.</p>
+
+</div>
+</div>
+<a id="af73955deef63a2913c5cab05ef235642" name="af73955deef63a2913c5cab05ef235642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73955deef63a2913c5cab05ef235642">&#9670;&#160;</a></span>Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.hahaha_bitmap_reference.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">62</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00016">Bitmap_</a>, <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00017">Count_Reference_</a>, <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00018">Disposed_</a>, <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00019">lock_</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00015">Mat_</a>.</p>
+
+</div>
+</div>
+<a id="a98765985b3af8919a7b4149cf64fbc23" name="a98765985b3af8919a7b4149cf64fbc23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98765985b3af8919a7b4149cf64fbc23">&#9670;&#160;</a></span>Get_Bitmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bitmap hahahalib.hahaha_bitmap_reference.Get_Bitmap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00043">43</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00016">Bitmap_</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">資料成員說明文件</h2>
+<a id="aba05077396eb580de357c3e049ec301f" name="aba05077396eb580de357c3e049ec301f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba05077396eb580de357c3e049ec301f">&#9670;&#160;</a></span>Bitmap_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bitmap? hahahalib.hahaha_bitmap_reference.Bitmap_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00016">16</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00021">hahaha_bitmap_reference()</a>, <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">Dispose()</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00043">Get_Bitmap()</a>.</p>
+
+</div>
+</div>
+<a id="aa48aaf8cf45eb9f26eb3484c42235e23" name="aa48aaf8cf45eb9f26eb3484c42235e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48aaf8cf45eb9f26eb3484c42235e23">&#9670;&#160;</a></span>Count_Reference_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hahahalib.hahaha_bitmap_reference.Count_Reference_ = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00017">17</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00051">Add_Ref()</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="af529132ed9ce5834ccfcc20a7724eae1" name="af529132ed9ce5834ccfcc20a7724eae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af529132ed9ce5834ccfcc20a7724eae1">&#9670;&#160;</a></span>Disposed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hahahalib.hahaha_bitmap_reference.Disposed_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00018">18</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="ad286c84630af170baaa84df8a24e7725" name="ad286c84630af170baaa84df8a24e7725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad286c84630af170baaa84df8a24e7725">&#9670;&#160;</a></span>lock_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly object hahahalib.hahaha_bitmap_reference.lock_ = new object()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00019">19</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00051">Add_Ref()</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="a4d28a913819e1d077d2d6a5d19d23745" name="a4d28a913819e1d077d2d6a5d19d23745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d28a913819e1d077d2d6a5d19d23745">&#9670;&#160;</a></span>Mat_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mat? hahahalib.hahaha_bitmap_reference.Mat_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__bitmap__reference_8cs_source.html">hahaha_bitmap_reference.cs</a> 檔案之第 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00015">15</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00021">hahaha_bitmap_reference()</a>, 及 <a class="el" href="hahaha__bitmap__reference_8cs_source.html#l00062">Dispose()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacehahahalib.html">hahahalib</a></li><li class="navelem"><a href="classhahahalib_1_1hahaha__bitmap__reference.html">hahaha_bitmap_reference</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

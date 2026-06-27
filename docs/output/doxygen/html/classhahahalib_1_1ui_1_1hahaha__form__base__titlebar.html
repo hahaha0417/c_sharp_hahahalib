@@ -1,0 +1,1689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hahahalib: hahahalib.ui.hahaha_form_base_titlebar  類別 參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hahahalib<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">hahahalib C# 類別庫手冊</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classhahahalib_1_1ui_1_1hahaha__form__base__titlebar.html','','classhahahalib_1_1ui_1_1hahaha__form__base__titlebar-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hahahalib.ui.hahaha_form_base_titlebar 類別 參考文件</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>以自訂標題列取代系統標題列的 WinForms 基底視窗。 透過直接處理 Win32 非用戶區訊息，保留拖曳與縮放行為。  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開方法(Public Methods)</h2></td></tr>
+<tr class="memitem:a73631957cab234b62abac360a556a8ac" id="r_a73631957cab234b62abac360a556a8ac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a73631957cab234b62abac360a556a8ac">hahaha_form_base_titlebar</a> ()</td></tr>
+<tr class="memitem:a8178c70f6c57aadff1a72684a4c4bd0a" id="r_a8178c70f6c57aadff1a72684a4c4bd0a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8178c70f6c57aadff1a72684a4c4bd0a">button_close_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a19d1615354fbd11e009b4dc5fa9e366b" id="r_a19d1615354fbd11e009b4dc5fa9e366b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a19d1615354fbd11e009b4dc5fa9e366b">button_max_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a3bebb563f31b76ac64d9f87359f9e42d" id="r_a3bebb563f31b76ac64d9f87359f9e42d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3bebb563f31b76ac64d9f87359f9e42d">button_min_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:abb92fc650f8994468cb789c4df15d9ae" id="r_abb92fc650f8994468cb789c4df15d9ae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abb92fc650f8994468cb789c4df15d9ae">button_system_MouseDown</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a75355fd4d6defbbd67c2a7ee6e6f71d6" id="r_a75355fd4d6defbbd67c2a7ee6e6f71d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75355fd4d6defbbd67c2a7ee6e6f71d6">button_system_MouseEnter</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a033dfdd5205858fdfde06726ef9b0133" id="r_a033dfdd5205858fdfde06726ef9b0133"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a033dfdd5205858fdfde06726ef9b0133">button_system_MouseLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a989b3983f8bafb0253b5f6b088e60617" id="r_a989b3983f8bafb0253b5f6b088e60617"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a989b3983f8bafb0253b5f6b088e60617">button_system_MouseMove</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:aed0821ef8dfa151cc10e6e0639514b95" id="r_aed0821ef8dfa151cc10e6e0639514b95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aed0821ef8dfa151cc10e6e0639514b95">button_system_MouseUp</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a87799fd247d9e4b7790b3f5c0286f620" id="r_a87799fd247d9e4b7790b3f5c0286f620"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a87799fd247d9e4b7790b3f5c0286f620">DragWindow</a> (object? s, MouseEventArgs e)</td></tr>
+<tr class="memdesc:a87799fd247d9e4b7790b3f5c0286f620"><td class="mdescLeft">&#160;</td><td class="mdescRight">透過自訂標題列區域啟動視窗拖曳。  <br /></td></tr>
+<tr class="memitem:abbc94f5e934c0b9dd92e5448195756ae" id="r_abbc94f5e934c0b9dd92e5448195756ae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abbc94f5e934c0b9dd92e5448195756ae">hahaha_form_base_titlebar_Load</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:afcf58a1137b9b25878d20d115b5cd428" id="r_afcf58a1137b9b25878d20d115b5cd428"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afcf58a1137b9b25878d20d115b5cd428">hahaha_form_base_titlebar_Shown</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a02b7d29835f879b5775a245189401a5b" id="r_a02b7d29835f879b5775a245189401a5b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02b7d29835f879b5775a245189401a5b">label_system_about_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a4e412570c3be492f30533a5fb9b0e34c" id="r_a4e412570c3be492f30533a5fb9b0e34c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4e412570c3be492f30533a5fb9b0e34c">label_system_close_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a0833623d45c064ad28dddb1804338922" id="r_a0833623d45c064ad28dddb1804338922"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0833623d45c064ad28dddb1804338922">label_system_system_MouseDown</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a85e59063bf992d3e78c7a92ed075c970" id="r_a85e59063bf992d3e78c7a92ed075c970"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a85e59063bf992d3e78c7a92ed075c970">label_system_system_MouseEnter</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a5bc18d4e06c19fe685afda2d24f78b3f" id="r_a5bc18d4e06c19fe685afda2d24f78b3f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5bc18d4e06c19fe685afda2d24f78b3f">label_system_system_MouseLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a36c68cf1c660d2b912c3b687f3ed30b7" id="r_a36c68cf1c660d2b912c3b687f3ed30b7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36c68cf1c660d2b912c3b687f3ed30b7">label_system_system_MouseMove</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:aec1e64528d31ded338431dc1917e1992" id="r_aec1e64528d31ded338431dc1917e1992"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aec1e64528d31ded338431dc1917e1992">label_system_system_MouseUp</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a6e9dbf3b5088a794bb386d41b0fca6c3" id="r_a6e9dbf3b5088a794bb386d41b0fca6c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e9dbf3b5088a794bb386d41b0fca6c3">label_system_version_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a882d0c178ac83c5570edd6d03fec83dd" id="r_a882d0c178ac83c5570edd6d03fec83dd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a882d0c178ac83c5570edd6d03fec83dd">panel_logo_Click</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a3cdcdf50d5e0e462140154cb853a6144" id="r_a3cdcdf50d5e0e462140154cb853a6144"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3cdcdf50d5e0e462140154cb853a6144">panel_logo_MouseDown</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:adbc33a7414ff090417e34ed82af2d28a" id="r_adbc33a7414ff090417e34ed82af2d28a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adbc33a7414ff090417e34ed82af2d28a">panel_logo_MouseEnter</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a1d9a56bb54c64690560cdd0184d34f32" id="r_a1d9a56bb54c64690560cdd0184d34f32"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1d9a56bb54c64690560cdd0184d34f32">panel_logo_MouseLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a0e2dc8b2b38b5f43820d6d07df598e20" id="r_a0e2dc8b2b38b5f43820d6d07df598e20"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0e2dc8b2b38b5f43820d6d07df598e20">panel_logo_MouseMove</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:ab952d379bd2a49d52f35d682470c5a58" id="r_ab952d379bd2a49d52f35d682470c5a58"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab952d379bd2a49d52f35d682470c5a58">panel_logo_MouseUp</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a88539e7b398f839b450f32e0d326727c" id="r_a88539e7b398f839b450f32e0d326727c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88539e7b398f839b450f32e0d326727c">panel_system_system_MouseDown</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a35794d744261d050221f709217887e2b" id="r_a35794d744261d050221f709217887e2b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a35794d744261d050221f709217887e2b">panel_system_system_MouseEnter</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:a9d61abcad2dce57c18cb5c98cd7b74cd" id="r_a9d61abcad2dce57c18cb5c98cd7b74cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9d61abcad2dce57c18cb5c98cd7b74cd">panel_system_system_MouseLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:aae9aa1738413d9e9ce0a0b20d61763b9" id="r_aae9aa1738413d9e9ce0a0b20d61763b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aae9aa1738413d9e9ce0a0b20d61763b9">panel_system_system_MouseMove</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:aa4437290ca53d72645d7ec7ee9413216" id="r_aa4437290ca53d72645d7ec7ee9413216"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa4437290ca53d72645d7ec7ee9413216">panel_system_system_MouseUp</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a0f4415ab418fb06f877e4c03aa1cb107" id="r_a0f4415ab418fb06f877e4c03aa1cb107"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0f4415ab418fb06f877e4c03aa1cb107">panel_title_MouseDown</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a836af34323197f8a1e94c6f2ac371b5f" id="r_a836af34323197f8a1e94c6f2ac371b5f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a836af34323197f8a1e94c6f2ac371b5f">panel_title_MouseEnter</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:ac24e01cdc41b7b8cf43371a10cd253a3" id="r_ac24e01cdc41b7b8cf43371a10cd253a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac24e01cdc41b7b8cf43371a10cd253a3">panel_title_MouseLeave</a> (object sender, EventArgs e)</td></tr>
+<tr class="memitem:ad1fa836ec26e5f164fa4a018521899ba" id="r_ad1fa836ec26e5f164fa4a018521899ba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad1fa836ec26e5f164fa4a018521899ba">panel_title_MouseMove</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:aab51e4593c5b431d4455fcaba21bfb43" id="r_aab51e4593c5b431d4455fcaba21bfb43"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aab51e4593c5b431d4455fcaba21bfb43">panel_title_MouseUp</a> (object sender, MouseEventArgs e)</td></tr>
+<tr class="memitem:a70fd870c9ffeeba9543ef193d9155976" id="r_a70fd870c9ffeeba9543ef193d9155976"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a70fd870c9ffeeba9543ef193d9155976">ToggleMaximizeRestore</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開屬性</h2></td></tr>
+<tr class="memitem:a6bb0de5ccae01cab8bfaa672e803cef7" id="r_a6bb0de5ccae01cab8bfaa672e803cef7"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a6bb0de5ccae01cab8bfaa672e803cef7">Color_Body_</a> = Color.FromArgb(255, 190, 190, 190)</td></tr>
+<tr class="memitem:a1048fd1d492e226d10986a082cb03465" id="r_a1048fd1d492e226d10986a082cb03465"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a1048fd1d492e226d10986a082cb03465">Color_Button_Base_</a> = Color.FromArgb(255, 30, 30, 30)</td></tr>
+<tr class="memitem:a2f92c34f2908c4bd6856687213fc8b04" id="r_a2f92c34f2908c4bd6856687213fc8b04"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a2f92c34f2908c4bd6856687213fc8b04">Color_Button_Down_</a> = Color.FromArgb(255, 90, 90, 90)</td></tr>
+<tr class="memitem:afd2e81b4b5ed01b670fca4fc31a92119" id="r_afd2e81b4b5ed01b670fca4fc31a92119"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#afd2e81b4b5ed01b670fca4fc31a92119">Color_Button_Move_</a> = Color.FromArgb(255, 60, 60, 60)</td></tr>
+<tr class="memitem:aaea1a91a9350a79fa8de3805417213e8" id="r_aaea1a91a9350a79fa8de3805417213e8"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#aaea1a91a9350a79fa8de3805417213e8">Color_Form_</a> = Color.FromArgb(255, 30, 30, 30)</td></tr>
+<tr class="memitem:a71ff965e4f3c0fdcc4c7908460735090" id="r_a71ff965e4f3c0fdcc4c7908460735090"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a71ff965e4f3c0fdcc4c7908460735090">Color_Logo_Base_</a> = Color.FromArgb(255, 60, 60, 60)</td></tr>
+<tr class="memitem:ac17462c014c706d73ec3aee8c3fc6d74" id="r_ac17462c014c706d73ec3aee8c3fc6d74"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#ac17462c014c706d73ec3aee8c3fc6d74">Color_Logo_Down_</a> = Color.FromArgb(255, 120, 120, 120)</td></tr>
+<tr class="memitem:aa3236b7daf80713d5bf0b88d9af5946d" id="r_aa3236b7daf80713d5bf0b88d9af5946d"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#aa3236b7daf80713d5bf0b88d9af5946d">Color_Logo_Move_</a> = Color.FromArgb(255, 90, 90, 90)</td></tr>
+<tr class="memitem:a0608cac33af3029eeff1b15504695cdc" id="r_a0608cac33af3029eeff1b15504695cdc"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a0608cac33af3029eeff1b15504695cdc">Color_System_</a> = Color.FromArgb(255, 90, 120, 90)</td></tr>
+<tr class="memitem:a43b7fb7dfb49abff343f888be676906b" id="r_a43b7fb7dfb49abff343f888be676906b"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a43b7fb7dfb49abff343f888be676906b">Color_Title_Base_</a> = Color.FromArgb(255, 190, 255, 190)</td></tr>
+<tr class="memitem:a4425d8dd595550aa5d5678fa48ed285e" id="r_a4425d8dd595550aa5d5678fa48ed285e"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#a4425d8dd595550aa5d5678fa48ed285e">Color_Title_Down_</a> = Color.FromArgb(255, 230, 255, 230)</td></tr>
+<tr class="memitem:ab1f04410cb01869592eb63aed57590f5" id="r_ab1f04410cb01869592eb63aed57590f5"><td class="memItemLeft">Color&#160;</td><td class="memItemRight"><a class="el" href="#ab1f04410cb01869592eb63aed57590f5">Color_Title_Move_</a> = Color.FromArgb(255, 210, 255, 210)</td></tr>
+<tr class="memitem:a0947e2ce79c2d5bdc627515930b31a79" id="r_a0947e2ce79c2d5bdc627515930b31a79"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0947e2ce79c2d5bdc627515930b31a79">Form_Border_Width_</a> = 10</td></tr>
+<tr class="memitem:a4d0cfd3461c30ef6590c2ece9c83f3b6" id="r_a4d0cfd3461c30ef6590c2ece9c83f3b6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4d0cfd3461c30ef6590c2ece9c83f3b6">Show_Maximize_</a> = true</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+保護方法(Protected Methods)</h2></td></tr>
+<tr class="memitem:acd03a0370279a851e20baafe5ac06c16" id="r_acd03a0370279a851e20baafe5ac06c16"><td class="memItemLeft">override void&#160;</td><td class="memItemRight"><a class="el" href="#acd03a0370279a851e20baafe5ac06c16">WndProc</a> (ref Message m)</td></tr>
+<tr class="memdesc:acd03a0370279a851e20baafe5ac06c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">攔截非用戶區訊息，讓表單自行處理外觀與縮放命中測試。  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">詳細描述</h2>
+<div class="textblock">
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00021">21</a> 行.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">建構子與解構子說明文件</h2>
+<a id="a73631957cab234b62abac360a556a8ac" name="a73631957cab234b62abac360a556a8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73631957cab234b62abac360a556a8ac">&#9670;&#160;</a></span>hahaha_form_base_titlebar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hahahalib.ui.hahaha_form_base_titlebar.hahaha_form_base_titlebar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">102</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00082">Color_Body_</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00089">Color_Button_Base_</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00081">Color_Form_</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00093">Color_Logo_Base_</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00085">Color_Title_Base_</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函式成員說明文件</h2>
+<a id="a8178c70f6c57aadff1a72684a4c4bd0a" name="a8178c70f6c57aadff1a72684a4c4bd0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8178c70f6c57aadff1a72684a4c4bd0a">&#9670;&#160;</a></span>button_close_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_close_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00414">414</a> 行.</p>
+
+</div>
+</div>
+<a id="a19d1615354fbd11e009b4dc5fa9e366b" name="a19d1615354fbd11e009b4dc5fa9e366b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d1615354fbd11e009b4dc5fa9e366b">&#9670;&#160;</a></span>button_max_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_max_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00389">389</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00099">Show_Maximize_</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00397">ToggleMaximizeRestore()</a>.</p>
+
+</div>
+</div>
+<a id="a3bebb563f31b76ac64d9f87359f9e42d" name="a3bebb563f31b76ac64d9f87359f9e42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bebb563f31b76ac64d9f87359f9e42d">&#9670;&#160;</a></span>button_min_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_min_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00384">384</a> 行.</p>
+
+</div>
+</div>
+<a id="abb92fc650f8994468cb789c4df15d9ae" name="abb92fc650f8994468cb789c4df15d9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb92fc650f8994468cb789c4df15d9ae">&#9670;&#160;</a></span>button_system_MouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_system_MouseDown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00263">263</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00091">Color_Button_Down_</a>.</p>
+
+</div>
+</div>
+<a id="a75355fd4d6defbbd67c2a7ee6e6f71d6" name="a75355fd4d6defbbd67c2a7ee6e6f71d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75355fd4d6defbbd67c2a7ee6e6f71d6">&#9670;&#160;</a></span>button_system_MouseEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_system_MouseEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00269">269</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a033dfdd5205858fdfde06726ef9b0133" name="a033dfdd5205858fdfde06726ef9b0133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033dfdd5205858fdfde06726ef9b0133">&#9670;&#160;</a></span>button_system_MouseLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_system_MouseLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00275">275</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00089">Color_Button_Base_</a>.</p>
+
+</div>
+</div>
+<a id="a989b3983f8bafb0253b5f6b088e60617" name="a989b3983f8bafb0253b5f6b088e60617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989b3983f8bafb0253b5f6b088e60617">&#9670;&#160;</a></span>button_system_MouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_system_MouseMove </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00281">281</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="aed0821ef8dfa151cc10e6e0639514b95" name="aed0821ef8dfa151cc10e6e0639514b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0821ef8dfa151cc10e6e0639514b95">&#9670;&#160;</a></span>button_system_MouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.button_system_MouseUp </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00287">287</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a87799fd247d9e4b7790b3f5c0286f620" name="a87799fd247d9e4b7790b3f5c0286f620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87799fd247d9e4b7790b3f5c0286f620">&#9670;&#160;</a></span>DragWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.DragWindow </td>
+          <td>(</td>
+          <td class="paramtype">object?</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00405">405</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00237">panel_title_MouseDown()</a>.</p>
+
+</div>
+</div>
+<a id="abbc94f5e934c0b9dd92e5448195756ae" name="abbc94f5e934c0b9dd92e5448195756ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc94f5e934c0b9dd92e5448195756ae">&#9670;&#160;</a></span>hahaha_form_base_titlebar_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.hahaha_form_base_titlebar_Load </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00439">439</a> 行.</p>
+
+</div>
+</div>
+<a id="afcf58a1137b9b25878d20d115b5cd428" name="afcf58a1137b9b25878d20d115b5cd428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf58a1137b9b25878d20d115b5cd428">&#9670;&#160;</a></span>hahaha_form_base_titlebar_Shown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.hahaha_form_base_titlebar_Shown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00223">223</a> 行.</p>
+
+</div>
+</div>
+<a id="a02b7d29835f879b5775a245189401a5b" name="a02b7d29835f879b5775a245189401a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b7d29835f879b5775a245189401a5b">&#9670;&#160;</a></span>label_system_about_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_about_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00424">424</a> 行.</p>
+
+</div>
+</div>
+<a id="a4e412570c3be492f30533a5fb9b0e34c" name="a4e412570c3be492f30533a5fb9b0e34c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e412570c3be492f30533a5fb9b0e34c">&#9670;&#160;</a></span>label_system_close_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_close_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00429">429</a> 行.</p>
+
+</div>
+</div>
+<a id="a0833623d45c064ad28dddb1804338922" name="a0833623d45c064ad28dddb1804338922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0833623d45c064ad28dddb1804338922">&#9670;&#160;</a></span>label_system_system_MouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_system_MouseDown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00293">293</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00091">Color_Button_Down_</a>.</p>
+
+</div>
+</div>
+<a id="a85e59063bf992d3e78c7a92ed075c970" name="a85e59063bf992d3e78c7a92ed075c970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e59063bf992d3e78c7a92ed075c970">&#9670;&#160;</a></span>label_system_system_MouseEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_system_MouseEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00299">299</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a5bc18d4e06c19fe685afda2d24f78b3f" name="a5bc18d4e06c19fe685afda2d24f78b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc18d4e06c19fe685afda2d24f78b3f">&#9670;&#160;</a></span>label_system_system_MouseLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_system_MouseLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00306">306</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00089">Color_Button_Base_</a>.</p>
+
+</div>
+</div>
+<a id="a36c68cf1c660d2b912c3b687f3ed30b7" name="a36c68cf1c660d2b912c3b687f3ed30b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c68cf1c660d2b912c3b687f3ed30b7">&#9670;&#160;</a></span>label_system_system_MouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_system_MouseMove </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00312">312</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="aec1e64528d31ded338431dc1917e1992" name="aec1e64528d31ded338431dc1917e1992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1e64528d31ded338431dc1917e1992">&#9670;&#160;</a></span>label_system_system_MouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_system_MouseUp </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00318">318</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a6e9dbf3b5088a794bb386d41b0fca6c3" name="a6e9dbf3b5088a794bb386d41b0fca6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9dbf3b5088a794bb386d41b0fca6c3">&#9670;&#160;</a></span>label_system_version_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.label_system_version_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00419">419</a> 行.</p>
+
+</div>
+</div>
+<a id="a882d0c178ac83c5570edd6d03fec83dd" name="a882d0c178ac83c5570edd6d03fec83dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882d0c178ac83c5570edd6d03fec83dd">&#9670;&#160;</a></span>panel_logo_Click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_Click </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00434">434</a> 行.</p>
+
+</div>
+</div>
+<a id="a3cdcdf50d5e0e462140154cb853a6144" name="a3cdcdf50d5e0e462140154cb853a6144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cdcdf50d5e0e462140154cb853a6144">&#9670;&#160;</a></span>panel_logo_MouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_MouseDown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00358">358</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00095">Color_Logo_Down_</a>.</p>
+
+</div>
+</div>
+<a id="adbc33a7414ff090417e34ed82af2d28a" name="adbc33a7414ff090417e34ed82af2d28a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc33a7414ff090417e34ed82af2d28a">&#9670;&#160;</a></span>panel_logo_MouseEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_MouseEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00364">364</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00094">Color_Logo_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a1d9a56bb54c64690560cdd0184d34f32" name="a1d9a56bb54c64690560cdd0184d34f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9a56bb54c64690560cdd0184d34f32">&#9670;&#160;</a></span>panel_logo_MouseLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_MouseLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00369">369</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00093">Color_Logo_Base_</a>.</p>
+
+</div>
+</div>
+<a id="a0e2dc8b2b38b5f43820d6d07df598e20" name="a0e2dc8b2b38b5f43820d6d07df598e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2dc8b2b38b5f43820d6d07df598e20">&#9670;&#160;</a></span>panel_logo_MouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_MouseMove </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00374">374</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00094">Color_Logo_Move_</a>.</p>
+
+</div>
+</div>
+<a id="ab952d379bd2a49d52f35d682470c5a58" name="ab952d379bd2a49d52f35d682470c5a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab952d379bd2a49d52f35d682470c5a58">&#9670;&#160;</a></span>panel_logo_MouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_logo_MouseUp </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00379">379</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00094">Color_Logo_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a88539e7b398f839b450f32e0d326727c" name="a88539e7b398f839b450f32e0d326727c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88539e7b398f839b450f32e0d326727c">&#9670;&#160;</a></span>panel_system_system_MouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_system_system_MouseDown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00328">328</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00091">Color_Button_Down_</a>.</p>
+
+</div>
+</div>
+<a id="a35794d744261d050221f709217887e2b" name="a35794d744261d050221f709217887e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35794d744261d050221f709217887e2b">&#9670;&#160;</a></span>panel_system_system_MouseEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_system_system_MouseEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00334">334</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a9d61abcad2dce57c18cb5c98cd7b74cd" name="a9d61abcad2dce57c18cb5c98cd7b74cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d61abcad2dce57c18cb5c98cd7b74cd">&#9670;&#160;</a></span>panel_system_system_MouseLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_system_system_MouseLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00340">340</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00089">Color_Button_Base_</a>.</p>
+
+</div>
+</div>
+<a id="aae9aa1738413d9e9ce0a0b20d61763b9" name="aae9aa1738413d9e9ce0a0b20d61763b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9aa1738413d9e9ce0a0b20d61763b9">&#9670;&#160;</a></span>panel_system_system_MouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_system_system_MouseMove </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00346">346</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="aa4437290ca53d72645d7ec7ee9413216" name="aa4437290ca53d72645d7ec7ee9413216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4437290ca53d72645d7ec7ee9413216">&#9670;&#160;</a></span>panel_system_system_MouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_system_system_MouseUp </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00352">352</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">Color_Button_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a0f4415ab418fb06f877e4c03aa1cb107" name="a0f4415ab418fb06f877e4c03aa1cb107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4415ab418fb06f877e4c03aa1cb107">&#9670;&#160;</a></span>panel_title_MouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_title_MouseDown </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00237">237</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00087">Color_Title_Down_</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00405">DragWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a836af34323197f8a1e94c6f2ac371b5f" name="a836af34323197f8a1e94c6f2ac371b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836af34323197f8a1e94c6f2ac371b5f">&#9670;&#160;</a></span>panel_title_MouseEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_title_MouseEnter </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00243">243</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00086">Color_Title_Move_</a>.</p>
+
+</div>
+</div>
+<a id="ac24e01cdc41b7b8cf43371a10cd253a3" name="ac24e01cdc41b7b8cf43371a10cd253a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24e01cdc41b7b8cf43371a10cd253a3">&#9670;&#160;</a></span>panel_title_MouseLeave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_title_MouseLeave </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00248">248</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00085">Color_Title_Base_</a>.</p>
+
+</div>
+</div>
+<a id="ad1fa836ec26e5f164fa4a018521899ba" name="ad1fa836ec26e5f164fa4a018521899ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fa836ec26e5f164fa4a018521899ba">&#9670;&#160;</a></span>panel_title_MouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_title_MouseMove </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00253">253</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00086">Color_Title_Move_</a>.</p>
+
+</div>
+</div>
+<a id="aab51e4593c5b431d4455fcaba21bfb43" name="aab51e4593c5b431d4455fcaba21bfb43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab51e4593c5b431d4455fcaba21bfb43">&#9670;&#160;</a></span>panel_title_MouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.panel_title_MouseUp </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MouseEventArgs</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00258">258</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00086">Color_Title_Move_</a>.</p>
+
+</div>
+</div>
+<a id="a70fd870c9ffeeba9543ef193d9155976" name="a70fd870c9ffeeba9543ef193d9155976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fd870c9ffeeba9543ef193d9155976">&#9670;&#160;</a></span>ToggleMaximizeRestore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.ui.hahaha_form_base_titlebar.ToggleMaximizeRestore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00397">397</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00389">button_max_Click()</a>.</p>
+
+</div>
+</div>
+<a id="acd03a0370279a851e20baafe5ac06c16" name="acd03a0370279a851e20baafe5ac06c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd03a0370279a851e20baafe5ac06c16">&#9670;&#160;</a></span>WndProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void hahahalib.ui.hahaha_form_base_titlebar.WndProc </td>
+          <td>(</td>
+          <td class="paramtype">ref Message</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00161">161</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00100">Form_Border_Width_</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">資料成員說明文件</h2>
+<a id="a6bb0de5ccae01cab8bfaa672e803cef7" name="a6bb0de5ccae01cab8bfaa672e803cef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb0de5ccae01cab8bfaa672e803cef7">&#9670;&#160;</a></span>Color_Body_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Body_ = Color.FromArgb(255, 190, 190, 190)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00082">82</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">hahaha_form_base_titlebar()</a>.</p>
+
+</div>
+</div>
+<a id="a1048fd1d492e226d10986a082cb03465" name="a1048fd1d492e226d10986a082cb03465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1048fd1d492e226d10986a082cb03465">&#9670;&#160;</a></span>Color_Button_Base_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Button_Base_ = Color.FromArgb(255, 30, 30, 30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00089">89</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">hahaha_form_base_titlebar()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00275">button_system_MouseLeave()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00306">label_system_system_MouseLeave()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00340">panel_system_system_MouseLeave()</a>.</p>
+
+</div>
+</div>
+<a id="a2f92c34f2908c4bd6856687213fc8b04" name="a2f92c34f2908c4bd6856687213fc8b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f92c34f2908c4bd6856687213fc8b04">&#9670;&#160;</a></span>Color_Button_Down_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Button_Down_ = Color.FromArgb(255, 90, 90, 90)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00091">91</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00263">button_system_MouseDown()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00293">label_system_system_MouseDown()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00328">panel_system_system_MouseDown()</a>.</p>
+
+</div>
+</div>
+<a id="afd2e81b4b5ed01b670fca4fc31a92119" name="afd2e81b4b5ed01b670fca4fc31a92119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2e81b4b5ed01b670fca4fc31a92119">&#9670;&#160;</a></span>Color_Button_Move_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Button_Move_ = Color.FromArgb(255, 60, 60, 60)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00090">90</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00269">button_system_MouseEnter()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00281">button_system_MouseMove()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00287">button_system_MouseUp()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00299">label_system_system_MouseEnter()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00312">label_system_system_MouseMove()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00318">label_system_system_MouseUp()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00334">panel_system_system_MouseEnter()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00346">panel_system_system_MouseMove()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00352">panel_system_system_MouseUp()</a>.</p>
+
+</div>
+</div>
+<a id="aaea1a91a9350a79fa8de3805417213e8" name="aaea1a91a9350a79fa8de3805417213e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea1a91a9350a79fa8de3805417213e8">&#9670;&#160;</a></span>Color_Form_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Form_ = Color.FromArgb(255, 30, 30, 30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00081">81</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">hahaha_form_base_titlebar()</a>.</p>
+
+</div>
+</div>
+<a id="a71ff965e4f3c0fdcc4c7908460735090" name="a71ff965e4f3c0fdcc4c7908460735090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ff965e4f3c0fdcc4c7908460735090">&#9670;&#160;</a></span>Color_Logo_Base_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Logo_Base_ = Color.FromArgb(255, 60, 60, 60)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00093">93</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">hahaha_form_base_titlebar()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00369">panel_logo_MouseLeave()</a>.</p>
+
+</div>
+</div>
+<a id="ac17462c014c706d73ec3aee8c3fc6d74" name="ac17462c014c706d73ec3aee8c3fc6d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac17462c014c706d73ec3aee8c3fc6d74">&#9670;&#160;</a></span>Color_Logo_Down_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Logo_Down_ = Color.FromArgb(255, 120, 120, 120)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00095">95</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00358">panel_logo_MouseDown()</a>.</p>
+
+</div>
+</div>
+<a id="aa3236b7daf80713d5bf0b88d9af5946d" name="aa3236b7daf80713d5bf0b88d9af5946d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3236b7daf80713d5bf0b88d9af5946d">&#9670;&#160;</a></span>Color_Logo_Move_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Logo_Move_ = Color.FromArgb(255, 90, 90, 90)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00094">94</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00364">panel_logo_MouseEnter()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00374">panel_logo_MouseMove()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00379">panel_logo_MouseUp()</a>.</p>
+
+</div>
+</div>
+<a id="a0608cac33af3029eeff1b15504695cdc" name="a0608cac33af3029eeff1b15504695cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0608cac33af3029eeff1b15504695cdc">&#9670;&#160;</a></span>Color_System_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_System_ = Color.FromArgb(255, 90, 120, 90)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00083">83</a> 行.</p>
+
+</div>
+</div>
+<a id="a43b7fb7dfb49abff343f888be676906b" name="a43b7fb7dfb49abff343f888be676906b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b7fb7dfb49abff343f888be676906b">&#9670;&#160;</a></span>Color_Title_Base_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Title_Base_ = Color.FromArgb(255, 190, 255, 190)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00085">85</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00102">hahaha_form_base_titlebar()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00248">panel_title_MouseLeave()</a>.</p>
+
+</div>
+</div>
+<a id="a4425d8dd595550aa5d5678fa48ed285e" name="a4425d8dd595550aa5d5678fa48ed285e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4425d8dd595550aa5d5678fa48ed285e">&#9670;&#160;</a></span>Color_Title_Down_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Title_Down_ = Color.FromArgb(255, 230, 255, 230)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00087">87</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00237">panel_title_MouseDown()</a>.</p>
+
+</div>
+</div>
+<a id="ab1f04410cb01869592eb63aed57590f5" name="ab1f04410cb01869592eb63aed57590f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f04410cb01869592eb63aed57590f5">&#9670;&#160;</a></span>Color_Title_Move_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color hahahalib.ui.hahaha_form_base_titlebar.Color_Title_Move_ = Color.FromArgb(255, 210, 255, 210)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00086">86</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00243">panel_title_MouseEnter()</a>, <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00253">panel_title_MouseMove()</a>, 及 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00258">panel_title_MouseUp()</a>.</p>
+
+</div>
+</div>
+<a id="a0947e2ce79c2d5bdc627515930b31a79" name="a0947e2ce79c2d5bdc627515930b31a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0947e2ce79c2d5bdc627515930b31a79">&#9670;&#160;</a></span>Form_Border_Width_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hahahalib.ui.hahaha_form_base_titlebar.Form_Border_Width_ = 10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00100">100</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00161">WndProc()</a>.</p>
+
+</div>
+</div>
+<a id="a4d0cfd3461c30ef6590c2ece9c83f3b6" name="a4d0cfd3461c30ef6590c2ece9c83f3b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0cfd3461c30ef6590c2ece9c83f3b6">&#9670;&#160;</a></span>Show_Maximize_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hahahalib.ui.hahaha_form_base_titlebar.Show_Maximize_ = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html">hahaha_form_base_titlebar.cs</a> 檔案之第 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00099">99</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__form__base__titlebar_8cs_source.html#l00389">button_max_Click()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacehahahalib.html">hahahalib</a></li><li class="navelem"><a href="namespacehahahalib_1_1ui.html">ui</a></li><li class="navelem"><a href="classhahahalib_1_1ui_1_1hahaha__form__base__titlebar.html">hahaha_form_base_titlebar</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

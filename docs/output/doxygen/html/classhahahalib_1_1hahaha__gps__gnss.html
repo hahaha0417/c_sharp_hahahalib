@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hahahalib: hahahalib.hahaha_gps_gnss  類別 參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hahahalib<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">hahahalib C# 類別庫手冊</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classhahahalib_1_1hahaha__gps__gnss.html','','classhahahalib_1_1hahaha__gps__gnss-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hahahalib.hahaha_gps_gnss 類別 參考文件</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>GNSS / NMEA 解析工具。 目前重點是從 RMC 訊息中擷取經緯度，並盡量避免在高頻解析時產生額外配置。  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開方法(Public Methods)</h2></td></tr>
+<tr class="memitem:ada8380e5b971e24240ffe3eb0a369704" id="r_ada8380e5b971e24240ffe3eb0a369704"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ada8380e5b971e24240ffe3eb0a369704">hahaha_gps_gnss</a> ()</td></tr>
+<tr class="memitem:a21ed3d58cc72899e199b50296adafe1f" id="r_a21ed3d58cc72899e199b50296adafe1f"><td class="memItemLeft">bool double double longitude_deg&#160;</td><td class="memItemRight"><a class="el" href="#a21ed3d58cc72899e199b50296adafe1f">Parse_Rmc_Lat_Lon</a> (string nmea)</td></tr>
+<tr class="memitem:aab5b8e1b0842e1c1d45695259a417087" id="r_aab5b8e1b0842e1c1d45695259a417087"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aab5b8e1b0842e1c1d45695259a417087">Parse_Rmc_Lat_Lon</a> (string nmea, out double latitude_deg, out double longitude_deg)</td></tr>
+<tr class="memdesc:aab5b8e1b0842e1c1d45695259a417087"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析像 <code>$GNRMC</code> 這類 RMC 訊息，並回傳十進位經緯度。 只接受狀態為 <code>A</code> 的有效定位資料。  <br /></td></tr>
+<tr class="memitem:ad1a63a9788ee08c0733782d78355f61b" id="r_ad1a63a9788ee08c0733782d78355f61b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ad1a63a9788ee08c0733782d78355f61b">Reset</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開屬性</h2></td></tr>
+<tr class="memitem:ae31e4123accebd88e4274361cda70860" id="r_ae31e4123accebd88e4274361cda70860"><td class="memItemLeft">bool double&#160;</td><td class="memItemRight"><a class="el" href="#ae31e4123accebd88e4274361cda70860">latitude_deg</a></td></tr>
+<tr class="memitem:ad5c114fcf6bd4974d5df78af46bf15fa" id="r_ad5c114fcf6bd4974d5df78af46bf15fa"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad5c114fcf6bd4974d5df78af46bf15fa">valid</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">詳細描述</h2>
+<div class="textblock">
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00009">9</a> 行.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">建構子與解構子說明文件</h2>
+<a id="ada8380e5b971e24240ffe3eb0a369704" name="ada8380e5b971e24240ffe3eb0a369704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8380e5b971e24240ffe3eb0a369704">&#9670;&#160;</a></span>hahaha_gps_gnss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hahahalib.hahaha_gps_gnss.hahaha_gps_gnss </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00011">11</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00016">Reset()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函式成員說明文件</h2>
+<a id="a21ed3d58cc72899e199b50296adafe1f" name="a21ed3d58cc72899e199b50296adafe1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ed3d58cc72899e199b50296adafe1f">&#9670;&#160;</a></span>Parse_Rmc_Lat_Lon() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool double double longitude_deg hahahalib.hahaha_gps_gnss.Parse_Rmc_Lat_Lon </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nmea</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00038">38</a> 行.</p>
+
+</div>
+</div>
+<a id="aab5b8e1b0842e1c1d45695259a417087" name="aab5b8e1b0842e1c1d45695259a417087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5b8e1b0842e1c1d45695259a417087">&#9670;&#160;</a></span>Parse_Rmc_Lat_Lon() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hahahalib.hahaha_gps_gnss.Parse_Rmc_Lat_Lon </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>nmea</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double</td>          <td class="paramname"><span class="paramname"><em>latitude_deg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double</td>          <td class="paramname"><span class="paramname"><em>longitude_deg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00025">25</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00038">latitude_deg</a>.</p>
+
+</div>
+</div>
+<a id="ad1a63a9788ee08c0733782d78355f61b" name="ad1a63a9788ee08c0733782d78355f61b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a63a9788ee08c0733782d78355f61b">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hahahalib.hahaha_gps_gnss.Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00016">16</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00011">hahaha_gps_gnss()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">資料成員說明文件</h2>
+<a id="ae31e4123accebd88e4274361cda70860" name="ae31e4123accebd88e4274361cda70860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31e4123accebd88e4274361cda70860">&#9670;&#160;</a></span>latitude_deg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool double hahahalib.hahaha_gps_gnss.latitude_deg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00038">38</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00025">Parse_Rmc_Lat_Lon()</a>.</p>
+
+</div>
+</div>
+<a id="ad5c114fcf6bd4974d5df78af46bf15fa" name="ad5c114fcf6bd4974d5df78af46bf15fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c114fcf6bd4974d5df78af46bf15fa">&#9670;&#160;</a></span>valid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hahahalib.hahaha_gps_gnss.valid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__gps__gnss_8cs_source.html">hahaha_gps_gnss.cs</a> 檔案之第 <a class="el" href="hahaha__gps__gnss_8cs_source.html#l00038">38</a> 行.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacehahahalib.html">hahahalib</a></li><li class="navelem"><a href="classhahahalib_1_1hahaha__gps__gnss.html">hahaha_gps_gnss</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -4,25 +4,30 @@ using System.Runtime.InteropServices;
 
 namespace hahahalib
 {
+    /// <summary>
+    /// 用於次毫秒等待的混合式休眠工具。
+    /// 以增加少量 CPU 使用率換取比一般 Thread.Sleep 更好的時間精度。
+    /// </summary>
     public class hahaha_sleep
     {
-        //1. Sleep(0) 讓出 CPU	0%～5%
-        //2. 粗 SpinWait（SpinWait(50)）	間歇忙等	10%～40%
-        //3. 最後 50µs 純忙等  精準 busy-wait	100%（僅 50µs）
-        
-        // Sleep_Ms(1) 1ms
+        // 策略：
+        // 1. 先用 Sleep(0) 讓出 CPU，避免整段時間都忙等。
+        // 2. 透過較粗粒度的 SpinWait 接近目標時間。
+        // 3. 最後用短暫忙等補齊精度。
+
+        /// <summary>
+        /// 以混合式 yield / spin 策略等待指定毫秒數。
+        /// </summary>
         public void Sleep_Ms(double ms)
         {
             long freq_ = Stopwatch.Frequency;
-            long ticks_ = (long)(freq_ * (ms / 1000.0)); // ms → ticks
+            long ticks_ = (long)(freq_ * (ms / 1000.0)); // 毫秒轉計時刻度
             long start_ = Stopwatch.GetTimestamp();
             long target_ = start_ + ticks_;
 
-            // 第一階段：讓出 CPU（避免 100% 忙等）
             Thread.Sleep(0);
 
-            // 第二階段：粗忙等直到剩下最後 ~50µs
-            long threshold_ = freq_ / 20000; // 50µs
+            long threshold_ = freq_ / 20000; // 約 50 微秒
 
             while (true)
             {
@@ -37,24 +42,24 @@ namespace hahahalib
                 Thread.SpinWait(50);
             }
 
-            // 第三階段：最後 50µs 用純忙等達到微秒級精度
             while (Stopwatch.GetTimestamp() < target_)
             {
-                // busy wait
             }
         }
 
-        // Sleep_Us(1000) 1ms
+        /// <summary>
+        /// 以相同混合策略等待指定微秒數。
+        /// </summary>
         public void Sleep_Us(double us)
         {
             long freq_ = Stopwatch.Frequency;
-            long ticks_ = (long)(freq_ * (us / 1_000_000.0)); // us → ticks
+            long ticks_ = (long)(freq_ * (us / 1_000_000.0)); // 微秒轉計時刻度
             long start_ = Stopwatch.GetTimestamp();
             long target_ = start_ + ticks_;
 
             Thread.Sleep(0);
 
-            long threshold_ = freq_ / 20000; // 50µs
+            long threshold_ = freq_ / 20000; // 約 50 微秒
 
             while (true)
             {
@@ -71,10 +76,7 @@ namespace hahahalib
 
             while (Stopwatch.GetTimestamp() < target_)
             {
-                // busy wait
             }
         }
-
     }
-
 }

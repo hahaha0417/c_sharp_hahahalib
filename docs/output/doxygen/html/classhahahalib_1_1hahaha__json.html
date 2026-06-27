@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hahahalib: hahahalib.hahaha_json  類別 參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hahahalib<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">hahahalib C# 類別庫手冊</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classhahahalib_1_1hahaha__json.html','','classhahahalib_1_1hahaha__json-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hahahalib.hahaha_json 類別 參考文件</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>簡單的 JSON 載入/儲存工具類別，適合一般 POCO 物件持久化。 為了維持本函式庫一致風格，這裡使用狀態碼而不是直接拋出例外。  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開方法(Public Methods)</h2></td></tr>
+<tr class="memitem:a38bf7e55cc877b4d346aed3b3706bb84" id="r_a38bf7e55cc877b4d346aed3b3706bb84"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a38bf7e55cc877b4d346aed3b3706bb84">hahaha_json</a> ()</td></tr>
+<tr class="memdesc:a38bf7e55cc877b4d346aed3b3706bb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立 JSON 工具實例。  <br /></td></tr>
+<tr class="memitem:abf09028e1ff0f1d35224668690b06feb" id="r_abf09028e1ff0f1d35224668690b06feb"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#abf09028e1ff0f1d35224668690b06feb">Load&lt; T &gt;</a> (string file_name, ref T obj, string section=&quot;&quot;)</td></tr>
+<tr class="memdesc:abf09028e1ff0f1d35224668690b06feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">將 JSON 檔案內容載入到 <em>obj</em> 。 <em>section</em>  目前未使用，保留是為了相容既有呼叫方式。  <br /></td></tr>
+<tr class="memitem:a7e09146062ddf47aff0afdeb6fffcf69" id="r_a7e09146062ddf47aff0afdeb6fffcf69"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7e09146062ddf47aff0afdeb6fffcf69">Save&lt; T &gt;</a> (string file_name, T obj)</td></tr>
+<tr class="memdesc:a7e09146062ddf47aff0afdeb6fffcf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">將 <em>obj</em>  序列化為格式化 JSON 並寫入磁碟。 若目標資料夾不存在，會自動建立。  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">詳細描述</h2>
+<div class="textblock">
+<p class="definition">定義在 <a class="el" href="hahaha__json_8cs_source.html">hahaha_json.cs</a> 檔案之第 <a class="el" href="hahaha__json_8cs_source.html#l00012">12</a> 行.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">建構子與解構子說明文件</h2>
+<a id="a38bf7e55cc877b4d346aed3b3706bb84" name="a38bf7e55cc877b4d346aed3b3706bb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bf7e55cc877b4d346aed3b3706bb84">&#9670;&#160;</a></span>hahaha_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hahahalib.hahaha_json.hahaha_json </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__json_8cs_source.html">hahaha_json.cs</a> 檔案之第 <a class="el" href="hahaha__json_8cs_source.html#l00017">17</a> 行.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函式成員說明文件</h2>
+<a id="abf09028e1ff0f1d35224668690b06feb" name="abf09028e1ff0f1d35224668690b06feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf09028e1ff0f1d35224668690b06feb">&#9670;&#160;</a></span>Load&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hahahalib.hahaha_json.Load&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ref T</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>section</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>傳回值</dt><dd>成功回傳 0，找不到檔案回傳 -1。</dd></dl>
+
+<p class="definition">定義在 <a class="el" href="hahaha__json_8cs_source.html">hahaha_json.cs</a> 檔案之第 <a class="el" href="hahaha__json_8cs_source.html#l00026">26</a> 行.</p>
+
+</div>
+</div>
+<a id="a7e09146062ddf47aff0afdeb6fffcf69" name="a7e09146062ddf47aff0afdeb6fffcf69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e09146062ddf47aff0afdeb6fffcf69">&#9670;&#160;</a></span>Save&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hahahalib.hahaha_json.Save&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>傳回值</dt><dd>成功回傳 0，序列化或檔案寫入失敗回傳 -1。</dd></dl>
+
+<p class="definition">定義在 <a class="el" href="hahaha__json_8cs_source.html">hahaha_json.cs</a> 檔案之第 <a class="el" href="hahaha__json_8cs_source.html#l00047">47</a> 行.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacehahahalib.html">hahahalib</a></li><li class="navelem"><a href="classhahahalib_1_1hahaha__json.html">hahaha_json</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

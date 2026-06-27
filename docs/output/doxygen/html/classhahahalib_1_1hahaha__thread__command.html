@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hant">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hahahalib: hahahalib.hahaha_thread_command  類別 參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">hahahalib<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">hahahalib C# 類別庫手冊</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="搜尋" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classhahahalib_1_1hahaha__thread__command.html','','classhahahalib_1_1hahaha__thread__command-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">載入中...</div>
+<div class="SRStatus" id="Searching">搜尋中...</div>
+<div class="SRStatus" id="NoMatches">無符合項目</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hahahalib.hahaha_thread_command 類別 參考文件</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>以獨立背景執行緒處理命令佇列的工作類別。 子類別通常覆寫 Handle(hahaha_thread_command_command) 來實作實際命令處理。  
+ <a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開方法(Public Methods)</h2></td></tr>
+<tr class="memitem:a332a629caf15b00fc03c80852673d17e" id="r_a332a629caf15b00fc03c80852673d17e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a332a629caf15b00fc03c80852673d17e">hahaha_thread_command</a> ()</td></tr>
+<tr class="memitem:ae4f9685ebf0c7dff5259c36354078523" id="r_ae4f9685ebf0c7dff5259c36354078523"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#ae4f9685ebf0c7dff5259c36354078523">Add_Command</a> (string code, object parameter=null)</td></tr>
+<tr class="memdesc:ae4f9685ebf0c7dff5259c36354078523"><td class="mdescLeft">&#160;</td><td class="mdescRight">將命令放入佇列，並喚醒背景執行緒。  <br /></td></tr>
+<tr class="memitem:ae50a2d3e253a4ce1c039a4ce8952742a" id="r_ae50a2d3e253a4ce1c039a4ce8952742a"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#ae50a2d3e253a4ce1c039a4ce8952742a">Close</a> ()</td></tr>
+<tr class="memdesc:ae50a2d3e253a4ce1c039a4ce8952742a"><td class="mdescLeft">&#160;</td><td class="mdescRight">通知工作執行緒停止、等待它結束，並釋放同步物件。  <br /></td></tr>
+<tr class="memitem:a3bd2cc37b937ed7034e92c9ecf4c0a23" id="r_a3bd2cc37b937ed7034e92c9ecf4c0a23"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#a3bd2cc37b937ed7034e92c9ecf4c0a23">Create</a> ()</td></tr>
+<tr class="memdesc:a3bd2cc37b937ed7034e92c9ecf4c0a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">建立背景工作執行緒與相關等待事件。  <br /></td></tr>
+<tr class="memitem:ad6c3a1be48f078a5888aca2d940f3a73" id="r_ad6c3a1be48f078a5888aca2d940f3a73"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#ad6c3a1be48f078a5888aca2d940f3a73">Handle</a> (<a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a> cmd)</td></tr>
+<tr class="memdesc:ad6c3a1be48f078a5888aca2d940f3a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">處理單一命令，應由子類別覆寫。  <br /></td></tr>
+<tr class="memitem:a2b5004b17661a42de48e4e016f22229b" id="r_a2b5004b17661a42de48e4e016f22229b"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#a2b5004b17661a42de48e4e016f22229b">On_Command</a> ()</td></tr>
+<tr class="memdesc:a2b5004b17661a42de48e4e016f22229b"><td class="mdescLeft">&#160;</td><td class="mdescRight">保留給子類別自訂命令建立流程的擴充點。 預設實作不做任何事。  <br /></td></tr>
+<tr class="memitem:a3d1b537fbb49421e27432be1798781b2" id="r_a3d1b537fbb49421e27432be1798781b2"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a3d1b537fbb49421e27432be1798781b2">OnHandleException</a> (<a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a> cmd, Exception ex)</td></tr>
+<tr class="memdesc:a3d1b537fbb49421e27432be1798781b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">提供子類別集中處理 Handle 例外的擴充點。  <br /></td></tr>
+<tr class="memitem:a21b4b68f36bcb64c62467ffba0d9f632" id="r_a21b4b68f36bcb64c62467ffba0d9f632"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#a21b4b68f36bcb64c62467ffba0d9f632">Reset</a> ()</td></tr>
+<tr class="memdesc:a21b4b68f36bcb64c62467ffba0d9f632"><td class="mdescLeft">&#160;</td><td class="mdescRight">將物件重設為關閉狀態，並清空尚未處理的命令佇列。  <br /></td></tr>
+<tr class="memitem:ae67458f0952bee61a736b892108ed318" id="r_ae67458f0952bee61a736b892108ed318"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#ae67458f0952bee61a736b892108ed318">Terminate</a> ()</td></tr>
+<tr class="memdesc:ae67458f0952bee61a736b892108ed318"><td class="mdescLeft">&#160;</td><td class="mdescRight">安全終止輔助方法，只通知結束並等待，不做強制中止。  <br /></td></tr>
+<tr class="memitem:a7479bf511feac75bab267c914e3f4edf" id="r_a7479bf511feac75bab267c914e3f4edf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7479bf511feac75bab267c914e3f4edf">Thread_Proc</a> ()</td></tr>
+<tr class="memdesc:a7479bf511feac75bab267c914e3f4edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">執行緒主迴圈。 每次被喚醒後會盡量把目前佇列清空，再通知 Wait 可返回。  <br /></td></tr>
+<tr class="memitem:af70e0c7a5bea1b601ddf323bb4206994" id="r_af70e0c7a5bea1b601ddf323bb4206994"><td class="memItemLeft">virtual int&#160;</td><td class="memItemRight"><a class="el" href="#af70e0c7a5bea1b601ddf323bb4206994">Wait</a> ()</td></tr>
+<tr class="memdesc:af70e0c7a5bea1b601ddf323bb4206994"><td class="mdescLeft">&#160;</td><td class="mdescRight">等待目前批次命令處理完成，或等待工作執行緒結束。  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開屬性</h2></td></tr>
+<tr class="memitem:ab09d1a0531e3db8a682471ff9864def4" id="r_ab09d1a0531e3db8a682471ff9864def4"><td class="memItemLeft">ManualResetEvent?&#160;</td><td class="memItemRight"><a class="el" href="#ab09d1a0531e3db8a682471ff9864def4">Event_Exit_</a></td></tr>
+<tr class="memitem:a134cd54942518cea9da82c9b3dc448fd" id="r_a134cd54942518cea9da82c9b3dc448fd"><td class="memItemLeft">ManualResetEvent?&#160;</td><td class="memItemRight"><a class="el" href="#a134cd54942518cea9da82c9b3dc448fd">Event_Run_</a></td></tr>
+<tr class="memitem:aade4889571f33aa8cd833340d873c147" id="r_aade4889571f33aa8cd833340d873c147"><td class="memItemLeft">AutoResetEvent?&#160;</td><td class="memItemRight"><a class="el" href="#aade4889571f33aa8cd833340d873c147">Event_Wait_</a></td></tr>
+<tr class="memitem:a137eba2d841f4d9987315522c2bb2a7d" id="r_a137eba2d841f4d9987315522c2bb2a7d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a137eba2d841f4d9987315522c2bb2a7d">Is_Close_</a> = true</td></tr>
+<tr class="memitem:a1fd019f6881c97d3a1d4ad66768acd78" id="r_a1fd019f6881c97d3a1d4ad66768acd78"><td class="memItemLeft">Lock&#160;</td><td class="memItemRight"><a class="el" href="#a1fd019f6881c97d3a1d4ad66768acd78">Lock_</a> = new Lock()</td></tr>
+<tr class="memitem:ab059b96a026b0eec71d3af173b876979" id="r_ab059b96a026b0eec71d3af173b876979"><td class="memItemLeft">Queue&lt; <a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab059b96a026b0eec71d3af173b876979">Queue_</a> = new Queue&lt;<a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a>&gt;()</td></tr>
+<tr class="memitem:a9666b46a140b4d11bb27f25da0d5379e" id="r_a9666b46a140b4d11bb27f25da0d5379e"><td class="memItemLeft">Thread?&#160;</td><td class="memItemRight"><a class="el" href="#a9666b46a140b4d11bb27f25da0d5379e">Thread_</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">詳細描述</h2>
+<div class="textblock">
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00011">11</a> 行.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">建構子與解構子說明文件</h2>
+<a id="a332a629caf15b00fc03c80852673d17e" name="a332a629caf15b00fc03c80852673d17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332a629caf15b00fc03c80852673d17e">&#9670;&#160;</a></span>hahaha_thread_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hahahalib.hahaha_thread_command.hahaha_thread_command </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00025">25</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">函式成員說明文件</h2>
+<a id="ae4f9685ebf0c7dff5259c36354078523" name="ae4f9685ebf0c7dff5259c36354078523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f9685ebf0c7dff5259c36354078523">&#9670;&#160;</a></span>Add_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Add_Command </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>parameter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00121">121</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">Event_Run_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00021">Lock_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00020">Queue_</a>.</p>
+
+</div>
+</div>
+<a id="ae50a2d3e253a4ce1c039a4ce8952742a" name="ae50a2d3e253a4ce1c039a4ce8952742a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50a2d3e253a4ce1c039a4ce8952742a">&#9670;&#160;</a></span>Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">73</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">Event_Run_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">Event_Wait_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">Is_Close_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00015">Thread_</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>.</p>
+
+</div>
+</div>
+<a id="a3bd2cc37b937ed7034e92c9ecf4c0a23" name="a3bd2cc37b937ed7034e92c9ecf4c0a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd2cc37b937ed7034e92c9ecf4c0a23">&#9670;&#160;</a></span>Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Create </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">51</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">Event_Run_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">Event_Wait_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">Is_Close_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00015">Thread_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="ad6c3a1be48f078a5888aca2d940f3a73" name="ad6c3a1be48f078a5888aca2d940f3a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c3a1be48f078a5888aca2d940f3a73">&#9670;&#160;</a></span>Handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Handle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a></td>          <td class="paramname"><span class="paramname"><em>cmd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00180">180</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="a2b5004b17661a42de48e4e016f22229b" name="a2b5004b17661a42de48e4e016f22229b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5004b17661a42de48e4e016f22229b">&#9670;&#160;</a></span>On_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.On_Command </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00137">137</a> 行.</p>
+
+</div>
+</div>
+<a id="a3d1b537fbb49421e27432be1798781b2" name="a3d1b537fbb49421e27432be1798781b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1b537fbb49421e27432be1798781b2">&#9670;&#160;</a></span>OnHandleException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void hahahalib.hahaha_thread_command.OnHandleException </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a></td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Exception</td>          <td class="paramname"><span class="paramname"><em>ex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00188">188</a> 行.</p>
+
+</div>
+</div>
+<a id="a21b4b68f36bcb64c62467ffba0d9f632" name="a21b4b68f36bcb64c62467ffba0d9f632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b4b68f36bcb64c62467ffba0d9f632">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">33</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">Event_Run_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">Event_Wait_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">Is_Close_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00021">Lock_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00020">Queue_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00015">Thread_</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00025">hahaha_thread_command()</a>.</p>
+
+</div>
+</div>
+<a id="ae67458f0952bee61a736b892108ed318" name="ae67458f0952bee61a736b892108ed318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67458f0952bee61a736b892108ed318">&#9670;&#160;</a></span>Terminate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Terminate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00094">94</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">Is_Close_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00015">Thread_</a>.</p>
+
+</div>
+</div>
+<a id="a7479bf511feac75bab267c914e3f4edf" name="a7479bf511feac75bab267c914e3f4edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7479bf511feac75bab267c914e3f4edf">&#9670;&#160;</a></span>Thread_Proc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hahahalib.hahaha_thread_command.Thread_Proc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">146</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">Event_Run_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">Event_Wait_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00180">Handle()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">Is_Close_</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00021">Lock_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00020">Queue_</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>.</p>
+
+</div>
+</div>
+<a id="af70e0c7a5bea1b601ddf323bb4206994" name="af70e0c7a5bea1b601ddf323bb4206994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af70e0c7a5bea1b601ddf323bb4206994">&#9670;&#160;</a></span>Wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int hahahalib.hahaha_thread_command.Wait </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00110">110</a> 行.</p>
+
+<p class="reference">參考 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">Event_Exit_</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">Event_Wait_</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">資料成員說明文件</h2>
+<a id="ab09d1a0531e3db8a682471ff9864def4" name="ab09d1a0531e3db8a682471ff9864def4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09d1a0531e3db8a682471ff9864def4">&#9670;&#160;</a></span>Event_Exit_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ManualResetEvent? hahahalib.hahaha_thread_command.Event_Exit_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00018">18</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00094">Terminate()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00110">Wait()</a>.</p>
+
+</div>
+</div>
+<a id="a134cd54942518cea9da82c9b3dc448fd" name="a134cd54942518cea9da82c9b3dc448fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134cd54942518cea9da82c9b3dc448fd">&#9670;&#160;</a></span>Event_Run_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ManualResetEvent? hahahalib.hahaha_thread_command.Event_Run_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00016">16</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00121">Add_Command()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="aade4889571f33aa8cd833340d873c147" name="aade4889571f33aa8cd833340d873c147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade4889571f33aa8cd833340d873c147">&#9670;&#160;</a></span>Event_Wait_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AutoResetEvent? hahahalib.hahaha_thread_command.Event_Wait_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00017">17</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00110">Wait()</a>.</p>
+
+</div>
+</div>
+<a id="a137eba2d841f4d9987315522c2bb2a7d" name="a137eba2d841f4d9987315522c2bb2a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137eba2d841f4d9987315522c2bb2a7d">&#9670;&#160;</a></span>Is_Close_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hahahalib.hahaha_thread_command.Is_Close_ = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00023">23</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00094">Terminate()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="a1fd019f6881c97d3a1d4ad66768acd78" name="a1fd019f6881c97d3a1d4ad66768acd78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd019f6881c97d3a1d4ad66768acd78">&#9670;&#160;</a></span>Lock_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lock hahahalib.hahaha_thread_command.Lock_ = new Lock()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00021">21</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00121">Add_Command()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="ab059b96a026b0eec71d3af173b876979" name="ab059b96a026b0eec71d3af173b876979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab059b96a026b0eec71d3af173b876979">&#9670;&#160;</a></span>Queue_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Queue&lt;<a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a>&gt; hahahalib.hahaha_thread_command.Queue_ = new Queue&lt;<a class="el" href="classhahahalib_1_1hahaha__thread__command__command.html">hahaha_thread_command_command</a>&gt;()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00020">20</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00121">Add_Command()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00146">Thread_Proc()</a>.</p>
+
+</div>
+</div>
+<a id="a9666b46a140b4d11bb27f25da0d5379e" name="a9666b46a140b4d11bb27f25da0d5379e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9666b46a140b4d11bb27f25da0d5379e">&#9670;&#160;</a></span>Thread_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Thread? hahahalib.hahaha_thread_command.Thread_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="hahaha__thread__command_8cs_source.html">hahaha_thread_command.cs</a> 檔案之第 <a class="el" href="hahaha__thread__command_8cs_source.html#l00015">15</a> 行.</p>
+
+<p class="reference">被參考於 <a class="el" href="hahaha__thread__command_8cs_source.html#l00073">Close()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00051">Create()</a>, <a class="el" href="hahaha__thread__command_8cs_source.html#l00033">Reset()</a>, 及 <a class="el" href="hahaha__thread__command_8cs_source.html#l00094">Terminate()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacehahahalib.html">hahahalib</a></li><li class="navelem"><a href="classhahahalib_1_1hahaha__thread__command.html">hahaha_thread_command</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

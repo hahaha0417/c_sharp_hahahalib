@@ -14,6 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace hahahalib.ui
 {
+    /// <summary>
+    /// 以自訂標題列取代系統標題列的 WinForms 基底視窗。
+    /// 透過直接處理 Win32 非用戶區訊息，保留拖曳與縮放行為。
+    /// </summary>
     public partial class hahaha_form_base_titlebar : Form
     {
         [DllImport("user32.dll", SetLastError = true)]
@@ -25,7 +29,7 @@ namespace hahahalib.ui
         [DllImport("user32.dll")] static extern bool ReleaseCapture();
         [DllImport("user32.dll")] static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
         [DllImport("user32.dll")] static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
-        // 讓框架知道我們換了邊框策略，但不觸發系統回畫標題列
+        // 告知作業系統框架設定已改變，但不要讓它重繪系統標題列。
         [DllImport("user32.dll", SetLastError = true)]
         static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
             int X, int Y, int cx, int cy, uint uFlags);
@@ -35,22 +39,22 @@ namespace hahahalib.ui
         [DllImport("dwmapi.dll")]
         static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
 
-        // ===== DWM 關閉非用戶區繪製 + 關邊框顏色（Win11）=====
+        // 用來抑制原生非用戶區繪製的 DWM 參數。
         const int DWMWA_NCRENDERING_POLICY = 2;
-        const int DWMWA_BORDER_COLOR = 34;      // Win11 專用
-        const int DWMNCRP_DISABLED = 1;         // 0=UseWindowStyle, 1=Disabled, 2=Enabled
+        const int DWMWA_BORDER_COLOR = 34;
+        const int DWMNCRP_DISABLED = 1;
 
 
         const int GWL_STYLE = -16;
         const int WS_CAPTION = 0x00C00000;
         const int WS_THICKFRAME = 0x00040000; // 也叫 WS_SIZEBOX
 
-        // ===== Win32 =====
+        // 與拖曳、縮放相關的 Win32 訊息常數。
         const int WM_NCLBUTTONDOWN = 0xA1;
         const int WM_NCHITTEST = 0x84;
         const int WM_SYSCOMMAND = 0x112;
 
-        // ===== 需要攔的訊息常數 =====
+        // 攔截後可阻止 Windows 自行繪製標題列與邊框的訊息。
         const int WM_NCCALCSIZE = 0x0083;
         const int WM_NCPAINT = 0x0085;
         const int WM_NCACTIVATE = 0x0086;
@@ -58,7 +62,7 @@ namespace hahahalib.ui
         const int WM_SETICON = 0x0080;
         const int WM_THEMECHANGED = 0x031A;
 
-        // UXTheme 內部會下發的未文件化訊息（標題列/框線重畫）：
+        // 可能觸發框線重繪的 UXTheme 內部訊息。
         const int WM_NCUAHDRAWCAPTION = 0x00AE;
         const int WM_NCUAHDRAWFRAME = 0x00AF;
 
@@ -151,24 +155,25 @@ namespace hahahalib.ui
             catch { /* 老系統沒有就忽略 */ }
         }
 
-        // 邊緣拉伸
+        /// <summary>
+        /// 攔截非用戶區訊息，讓表單自行處理外觀與縮放命中測試。
+        /// </summary>
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
             {
-                // 告訴系統：非用戶區我自己處理，取消預設邊框/標題列尺寸
+                // 移除預設非用戶區，讓自訂標題列可以吃滿整個視窗上緣。
                 case WM_NCCALCSIZE:
                     if (m.WParam != IntPtr.Zero) { m.Result = IntPtr.Zero; return; }
                     break;
 
-                // 阻止系統在非用戶區重繪（避免白邊）
+                // 阻止作業系統繪製原生邊框與標題列。
                 case WM_NCPAINT:
                     m.Result = IntPtr.Zero;
                     return;
 
-                // 焦點切換時，阻止系統非用戶區重畫
+                // 避免焦點切換時自訂框線被系統重新刷掉。
                 case WM_NCACTIVATE:
-                    // 直接回 1（視為已處理且保持外觀不變）
                     m.Result = (IntPtr)1;
                     return;
 
@@ -194,6 +199,7 @@ namespace hahahalib.ui
                 case WM_NCHITTEST:
                     base.WndProc(ref m);
 
+                    // 由於原生非用戶區已關閉，這裡要自行定義縮放邊界命中結果。
                     Point p = PointToClient(new Point((int)m.LParam & 0xFFFF, (int)m.LParam >> 16));
                     bool top = p.Y < Form_Border_Width_;
                     bool left = p.X < Form_Border_Width_;
@@ -219,7 +225,7 @@ namespace hahahalib.ui
             base.OnHandleCreated(e);
             int style = GetWindowLong(this.Handle, GWL_STYLE);
             style &= ~WS_CAPTION;
-            //style &= ~WS_THICKFRAME;                 // 去掉系統可縮放邊框
+            // 保留 WS_THICKFRAME，讓移除標題列後仍可縮放視窗。
             SetWindowLong(this.Handle, GWL_STYLE, style);
             
             
@@ -393,6 +399,9 @@ namespace hahahalib.ui
             WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
         }
 
+        /// <summary>
+        /// 透過自訂標題列區域啟動視窗拖曳。
+        /// </summary>
         public void DragWindow(object? s, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

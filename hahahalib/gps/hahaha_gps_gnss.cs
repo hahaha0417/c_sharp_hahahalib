@@ -2,6 +2,10 @@
 
 namespace hahahalib
 {
+    /// <summary>
+    /// GNSS / NMEA 解析工具。
+    /// 目前重點是從 RMC 訊息中擷取經緯度，並盡量避免在高頻解析時產生額外配置。
+    /// </summary>
     public class hahaha_gps_gnss
     {
         public hahaha_gps_gnss()
@@ -14,8 +18,10 @@ namespace hahahalib
             return 0;
         }
 
-        // Parse NMEA RMC sentence ($GNRMC / $GMRMC / $GPRMC ...), return degrees.
-        // Only accepts status 'A' (valid fix). Avoids allocations and parsing helpers.
+        /// <summary>
+        /// 解析像 <c>$GNRMC</c> 這類 RMC 訊息，並回傳十進位經緯度。
+        /// 只接受狀態為 <c>A</c> 的有效定位資料。
+        /// </summary>
         public bool Parse_Rmc_Lat_Lon(string nmea, out double latitude_deg, out double longitude_deg)
         {
             latitude_deg = 0.0;
@@ -70,7 +76,7 @@ namespace hahahalib
 
         private bool Parse_Minutes_Scaled_1e7(string s, ref int pos, int end, out long minutes_scaled_1e7)
         {
-            // NMEA: mm[.ffff...]
+            // NMEA 分鐘欄位格式：mm[.ffff...]
             minutes_scaled_1e7 = 0;
 
             if (!Parse_U32_Fixed_Digits(s, ref pos, end, 2, out uint minutesInt))
@@ -91,7 +97,7 @@ namespace hahahalib
                     fracDigits++;
                 }
 
-                // Optional rounding by the 8th digit.
+                // 最多保留 7 位小數，並使用第 8 位做四捨五入。
                 bool roundUp = false;
                 if (pos < end && Is_Digit(s[pos]))
                 {
@@ -101,7 +107,7 @@ namespace hahahalib
 
                 if (fracDigits < 7)
                 {
-                    // multiply by 10^(7-fracDigits)
+                    // 補齊到固定 1e7 比例，後續就能用整數運算。
                     long mul = 1;
                     for (int i = 0; i < (7 - fracDigits); i++) mul *= 10;
                     frac *= mul;
@@ -109,7 +115,7 @@ namespace hahahalib
 
                 if (roundUp) frac++;
 
-                // carry into integer minutes
+                // 小數進位回整數分鐘。
                 if (frac >= 10_000_000L)
                 {
                     frac -= 10_000_000L;
@@ -126,7 +132,7 @@ namespace hahahalib
 
         private bool Parse_Coord_Ddmm_To_E7(string s, int start, int end, int deg_digits, out int out_e7_abs)
         {
-            // latitude: ddmm.mmmm, longitude: dddmm.mmmm
+            // 緯度格式為 ddmm.mmmm，經度格式為 dddmm.mmmm。
             out_e7_abs = 0;
 
             if (end <= start) return false;
@@ -141,7 +147,7 @@ namespace hahahalib
                 return false;
 
             long degE7 = (long)deg * 10_000_000L;
-            long minToDegE7 = (minutesScaled1e7 + 30) / 60; // rounded
+            long minToDegE7 = (minutesScaled1e7 + 30) / 60; // 以四捨五入方式把分鐘轉為度。
             long coordE7 = degE7 + minToDegE7;
 
             if (coordE7 > int.MaxValue) return false;
@@ -156,19 +162,19 @@ namespace hahahalib
             longitude_e7 = 0;
 
             if (nmea == null) return false;
-            if (nmea.Length < 12) return false; // minimal "$??RMC,,,,,,,"
+            if (nmea.Length < 12) return false; // 最短合法格式類似 "$??RMC,,,,,,,"
 
-            // Accept: $GNRMC,... or $GMRMC,... etc (any 2-letter talker).
+            // 只要句型是 RMC，就接受任意 talker ID。
             if (nmea[0] != '$') return false;
             if (nmea.Length < 7) return false;
             if (nmea[3] != 'R' || nmea[4] != 'M' || nmea[5] != 'C' || nmea[6] != ',') return false;
 
-            // Field 1: time (skip)
+            // 欄位 1：UTC 時間，目前不使用。
             int p = 7;
             int comma = Find_Char(nmea, p, ',');
             if (comma < 0) return false;
 
-            // Field 2: status
+            // 欄位 2：狀態，必須是 'A' 才視為有效定位。
             p = comma + 1;
             comma = Find_Char(nmea, p, ',');
             if (comma < 0) return false;
@@ -176,13 +182,13 @@ namespace hahahalib
             char status = nmea[p];
             if (status != 'A') return false;
 
-            // Field 3: latitude
+            // 欄位 3：緯度。
             p = comma + 1;
             comma = Find_Char(nmea, p, ',');
             if (comma < 0 || comma == p) return false;
             if (!Parse_Coord_Ddmm_To_E7(nmea, p, comma, 2, out int latAbsE7)) return false;
 
-            // Field 4: N/S
+            // 欄位 4：緯度半球。
             p = comma + 1;
             comma = Find_Char(nmea, p, ',');
             if (comma < 0) return false;
@@ -190,13 +196,13 @@ namespace hahahalib
             char ns = nmea[p];
             if (ns != 'N' && ns != 'S') return false;
 
-            // Field 5: longitude
+            // 欄位 5：經度。
             p = comma + 1;
             comma = Find_Char(nmea, p, ',');
             if (comma < 0 || comma == p) return false;
             if (!Parse_Coord_Ddmm_To_E7(nmea, p, comma, 3, out int lonAbsE7)) return false;
 
-            // Field 6: E/W
+            // 欄位 6：經度半球。
             p = comma + 1;
             if (p >= nmea.Length) return false;
             char ew = nmea[p];

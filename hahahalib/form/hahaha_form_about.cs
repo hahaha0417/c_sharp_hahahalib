@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace hahahalib.ui
 {
+    /// <summary>
+    /// 使用自訂標題列基底表單的 About 視窗。
+    /// 使用者點擊基底區域時只會隱藏，不會直接釋放。
+    /// </summary>
     public partial class hahaha_form_about : hahahalib.ui.hahaha_form_base_titlebar
     {
         public hahaha_form_about()

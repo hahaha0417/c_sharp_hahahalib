@@ -5,36 +5,31 @@ using System.Threading;
 namespace hahahalib
 {
     /// <summary>
-    /// C# 版：hahaha_thread_command
-    /// - Create(): 建立背景執行緒與事件
-    /// - AddCommand(): 丟入一個命令並喚醒執行緒
-    /// - Wait(): 等到當前批次命令處理完成（或被要求退出）
-    /// - Close(): 通知退出並釋放資源
-    /// - Terminate(): 安全版的通知退出（不強殺）
-    /// - Handle(): 覆寫以處理單一命令
+    /// 以獨立背景執行緒處理命令佇列的工作類別。
+    /// 子類別通常覆寫 <see cref="Handle(hahaha_thread_command_command)"/> 來實作實際命令處理。
     /// </summary>
     public class hahaha_thread_command
     {
 
-
-
-        // === 狀態/同步物件 ===
+        // 執行緒生命週期與同步物件。
         public Thread? Thread_;
-        public ManualResetEvent? Event_Run_;   // 對應 Event_Run_ (manual reset)
-        public AutoResetEvent? Event_Wait_;   // 對應 Event_Wait_ (auto reset)
-        public ManualResetEvent? Event_Exit_;  // 對應 Event_Exit_ (manual reset)
+        public ManualResetEvent? Event_Run_;
+        public AutoResetEvent? Event_Wait_;
+        public ManualResetEvent? Event_Exit_;
 
         public Queue<hahaha_thread_command_command> Queue_ = new Queue<hahaha_thread_command_command>();
         public Lock Lock_ = new Lock();
 
         public bool Is_Close_ = true;
 
-        // === 建構/重設 ===
         public hahaha_thread_command()
         {
             Reset();
         }
 
+        /// <summary>
+        /// 將物件重設為關閉狀態，並清空尚未處理的命令佇列。
+        /// </summary>
         public virtual int Reset()
         {
             Thread_ = null;
@@ -50,10 +45,12 @@ namespace hahahalib
             return 0;
         }
 
-        // === 建立/關閉 ===
+        /// <summary>
+        /// 建立背景工作執行緒與相關等待事件。
+        /// </summary>
         public virtual int Create()
         {
-            Close(); // 確保乾淨狀態
+            Close();
 
             Event_Run_ = new ManualResetEvent(false);
             Event_Wait_ = new AutoResetEvent(false);
@@ -70,20 +67,20 @@ namespace hahahalib
             return 0;
         }
 
+        /// <summary>
+        /// 通知工作執行緒停止、等待它結束，並釋放同步物件。
+        /// </summary>
         public virtual int Close()
         {
-            // 通知退出
             Is_Close_ = true;
             Event_Exit_?.Set();
 
-            // 等待執行緒結束
             if (Thread_ != null)
             {
                 Thread_.Join();
                 Thread_ = null;
             }
 
-            // 釋放事件
             Event_Run_?.Dispose(); Event_Run_ = null;
             Event_Wait_?.Dispose(); Event_Wait_ = null;
             Event_Exit_?.Dispose(); Event_Exit_ = null;
@@ -92,7 +89,7 @@ namespace hahahalib
         }
 
         /// <summary>
-        /// 安全終止：只做「通知退出＋等待」，不使用 Thread.Abort()
+        /// 安全終止輔助方法，只通知結束並等待，不做強制中止。
         /// </summary>
         public virtual int Terminate()
         {
@@ -107,7 +104,9 @@ namespace hahahalib
             return 0;
         }
 
-        // === 等待目前批次處理完成 ===
+        /// <summary>
+        /// 等待目前批次命令處理完成，或等待工作執行緒結束。
+        /// </summary>
         public virtual int Wait()
         {
             if (Event_Wait_ == null || Event_Exit_ == null) return -1;
@@ -116,7 +115,9 @@ namespace hahahalib
             return idx == 0 ? 0 : -1;
         }
 
-        // === 丟入命令 ===
+        /// <summary>
+        /// 將命令放入佇列，並喚醒背景執行緒。
+        /// </summary>
         public virtual int Add_Command(string code, object parameter = null)
         {
             if (Event_Run_ == null) return -1;
@@ -124,21 +125,24 @@ namespace hahahalib
             lock (Lock_)
             {
                 Queue_.Enqueue(new hahaha_thread_command_command { Code_ = code, Parameter_ = parameter });
-                // 有命令就喚醒
                 Event_Run_.Set();
             }
             return 0;
         }
 
         /// <summary>
-        /// 若你想複寫「命令建立流程」可覆寫本方法；預設改走 AddCommand。
+        /// 保留給子類別自訂命令建立流程的擴充點。
+        /// 預設實作不做任何事。
         /// </summary>
         public virtual int On_Command()
         {
             return 0;
         }
 
-        // === 執行緒主迴圈 ===
+        /// <summary>
+        /// 執行緒主迴圈。
+        /// 每次被喚醒後會盡量把目前佇列清空，再通知 <see cref="Wait"/> 可返回。
+        /// </summary>
         public void Thread_Proc()
         {
             var handles = new WaitHandle[] { Event_Run_, Event_Exit_ };
@@ -146,12 +150,12 @@ namespace hahahalib
             while (true)
             {
                 int signaled = WaitHandle.WaitAny(handles);
-                if (signaled == 1) // Exit
+                if (signaled == 1)
                 {
                     break;
                 }
 
-                // 被 Run 事件喚醒：把目前佇列中所有命令處理完
+                // 一次清掉目前批次，讓單次 Wait() 可以觀察到批次完成。
                 while (!Is_Close_ && Queue_.Count > 0)
                 {
                     hahaha_thread_command_command? cmd_ = null;
@@ -160,40 +164,29 @@ namespace hahahalib
                         cmd_ = Queue_.Dequeue();
 
                     }
-
-              
-
-                    //try
                     {
                         Handle(cmd_);
                     }
-                    //catch (Exception ex)
-                    //{
-                    //    OnHandleException(cmd_, ex);
-                    //}
                 }
 
-                // 批次結束：清除 Run，並通知 Wait()
                 Event_Run_.Reset();
                 Event_Wait_.Set();
             }
         }
 
         /// <summary>
-        /// 處理單一命令：請在子類別覆寫
+        /// 處理單一命令，應由子類別覆寫。
         /// </summary>
         public virtual int Handle(hahaha_thread_command_command cmd)
         {
-            // 預設不做事，回 0
             return 0;
         }
 
         /// <summary>
-        /// 可覆寫：處理 Handle() 內部拋出的例外
+        /// 提供子類別集中處理 <see cref="Handle"/> 例外的擴充點。
         /// </summary>
         public virtual void OnHandleException(hahaha_thread_command_command cmd, Exception ex)
         {
-            // 預設吞例外；可改寫成記錄或回報
         }
     }
 }
